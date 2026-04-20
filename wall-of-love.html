@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Wall of Love — tous les témoignages de Cynthia Mayer, professeure de FLE." />
+  <title>Wall of Love — Cynthia Mayer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body { background: var(--bg-dark); color: var(--on-dark); min-height: 100vh; }
+
+    /* === EN-TÊTE === */
+    .wl-header {
+      padding: calc(var(--nav-h) + 5rem) 0 4rem;
+      text-align: center;
+    }
+    .wl-header .section-num { color: var(--canard-mid); }
+    .wl-header h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      color: var(--on-dark);
+      margin-bottom: 0.75rem;
+    }
+    .wl-header p { font-size: 1rem; color: var(--on-dark-muted); max-width: 44ch; margin: 0 auto; line-height: 1.75; }
+    .wl-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+    .wl-stat strong { display: block; font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--canard); }
+    .wl-stat span { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--on-dark-muted); }
+
+    /* === FILTRES === */
+    .wl-filters {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+    .wf-btn {
+      padding: 0.45rem 1.2rem;
+      border-radius: 100px;
+      border: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.78rem;
+      color: var(--on-dark-muted);
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .wf-btn:hover { border-color: var(--canard-mid); color: var(--canard-mid); }
+    .wf-btn.active { background: var(--canard); border-color: var(--canard); color: white; }
+
+    /* === MASONRY GRID === */
+    .wl-grid {
+      column-count: 3;
+      column-gap: 1.25rem;
+      margin-bottom: 5rem;
+    }
+    .wl-card {
+      break-inside: avoid;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin-bottom: 1.25rem;
+      transition: background 0.25s, border-color 0.25s, opacity 0.3s, transform 0.3s;
+    }
+    .wl-card:hover {
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(27,153,139,0.3);
+    }
+    .wl-card.hidden { opacity: 0; transform: scale(0.97); pointer-events: none; }
+    .wl-qmark {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem; line-height: 0.5;
+      color: var(--canard); opacity: 0.4;
+      margin-bottom: 0.8rem;
+    }
+    .wl-text {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--on-dark);
+      line-height: 1.78;
+      margin-bottom: 1.25rem;
+    }
+    .wl-author { display: flex; align-items: center; gap: 0.7rem; }
+    .wl-avatar {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: var(--canard-dark);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.68rem; font-weight: 500; color: var(--canard-mid);
+      flex-shrink: 0;
+    }
+    .wl-name { font-size: 0.84rem; font-weight: 500; color: var(--on-dark); }
+    .wl-role { font-size: 0.72rem; color: var(--on-dark-muted); }
+    .wl-badge {
+      display: inline-block;
+      font-size: 0.62rem;
+      padding: 0.18rem 0.55rem;
+      border-radius: 100px;
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .badge-eleve { background: rgba(27,153,139,0.15); color: var(--canard-mid); }
+    .badge-collegue { background: rgba(201,150,58,0.15); color: #D4A347; }
+    .badge-manager { background: rgba(139,92,246,0.15); color: #A78BFA; }
+    .badge-tutrice { background: rgba(212,105,74,0.15); color: #E09070; }
+
+    /* === CTA ADD === */
+    .wl-add {
+      text-align: center;
+      padding: 3rem;
+      border: 1px dashed rgba(255,255,255,0.12);
+      border-radius: var(--radius-xl);
+      margin-bottom: 5rem;
+    }
+    .wl-add h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--on-dark); margin-bottom: 0.5rem; }
+    .wl-add p { font-size: 0.88rem; color: var(--on-dark-muted); margin-bottom: 1.5rem; }
+    .wl-add a {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.75rem 1.8rem; background: var(--canard); color: white;
+      border-radius: 100px; font-size: 0.82rem; font-weight: 500;
+      transition: background 0.2s; letter-spacing: 0.05em;
+    }
+    .wl-add a:hover { background: var(--canard-dark); }
+
+    /* === FOOTER === */
+    .wl-footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.78rem;
+      color: var(--on-dark-muted);
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .wl-footer a { color: var(--canard); }
+
+    @media (max-width: 900px) { .wl-grid { column-count: 2; } }
+    @media (max-width: 600px) { .wl-grid { column-count: 1; } .wl-stats { gap: 1.5rem; flex-wrap: wrap; } }
+  </style>
+</head>
+<body>
+
+  <nav id="nav" class="scrolled">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Cynthia Mayer</a>
+      <ul class="nav-links">
+        <li><a href="index.html#temoignages">Retour au site</a></li>
+        <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="wl-header">
+    <div class="container">
+      <span class="section-num">Wall of Love</span>
+      <h1>Ce qu'ils disent de moi</h1>
+      <p>Des élèves, des collègues, des managers. Depuis Belfort jusqu'à Duke University.</p>
+      <div class="wl-stats">
+        <div class="wl-stat"><strong>6+</strong><span>témoignages</span></div>
+        <div class="wl-stat"><strong>4</strong><span>continents</span></div>
+        <div class="wl-stat"><strong>100%</strong><span>non sollicités</span></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <div class="wl-filters">
+      <button class="wf-btn active" data-filter="all">Tous</button>
+      <button class="wf-btn" data-filter="eleve">Élèves</button>
+      <button class="wf-btn" data-filter="collegue">Collègues</button>
+      <button class="wf-btn" data-filter="manager">Managers</button>
+    </div>
+
+    <div class="wl-grid">
+
+      <!-- 1. Minho Kim -->
+      <div class="wl-card" data-cat="eleve">
+        <span class="wl-badge badge-eleve">Élève</span>
+        <div class="wl-qmark">"</div>
+        <p class="wl-text">J'ai eu le plaisir d'apprendre le français débutant avec Cynthia pendant quelques mois, et mon expérience a été très positive. Elle était toujours très bien préparée, très compétente et expliquait les notions d'une façon claire et ludique. La patience et l'attention qu'elle porte aux besoins de chaque étudiant ont créé un environnement bienveillant dans lequel je me sentais à l'aise pour pratiquer et poser toutes mes questions en toute confiance. Sa passion pour l'enseignement du français transparaissait dans chacun des cours.</p>
+        <div class="wl-author">
+          <div class="wl-avatar">MK</div>
+          <div>
+            <div class="wl-name">Minho Kim</div>
+            <div class="wl-role">Élève · Cours particuliers A1</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Allison Lawrence -->
+      <div class="wl-card" data-cat="eleve">
+        <span class="wl-badge badge-eleve">Élève</span>
+        <div class="wl-qmark">"</div>
+        <p class="wl-text">Cynthia est une prof géniale ! Elle s'adapte à votre niveau et vous aide à progresser à partir de ce que vous connaissez déjà. Ses explications sont claires et efficaces. Je la recommande vivement !!</p>
+        <div class="wl-author">
+          <div class="wl-avatar">AL</div>
+          <div>
+            <div class="wl-name">Allison Lawrence</div>
+            <div class="wl-role">Élève · Cours particuliers</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Colette Dupré -->
+      <div class="wl-card" data-cat="collegue">
+        <span class="wl-badge badge-tutrice">Tutrice de stage</span>
+        <div class="wl-qmark">"</div>
+        <p class="wl-text">J'ai travaillé avec Mlle Mayer sur un groupe d'élèves marocaines désireuses d'apprendre à lire et à écrire. Ma stagiaire a été conviviale, elle encourageait chaque élève et a pris le temps nécessaire pour leur donner des explications. Cynthia prenait le temps de se lever pour aller voir des élèves en particulier. Elle les regardait en parlant et s'adressait à elles par leur prénom. Elle a rattaché leur quotidien à ses enseignements. Les objectifs étaient présentés clairement. Cynthia a organisé des exercices progressifs et vérifiait toujours la compréhension. C'était un plaisir de travailler avec elle et d'améliorer mes méthodes d'enseignement.</p>
+        <div class="wl-author">
+          <div class="wl-avatar">CD</div>
+          <div>
+            <div class="wl-name">Colette Dupré</div>
+            <div class="wl-role">Tutrice de stage · Centre Culturel de la Pépinière, Belfort</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Kumar Gunasekaran -->
+      <div class="wl-card" data-cat="collegue">
+        <span class="wl-badge badge-collegue">Collègue</span>
+        <div class="wl-qmark">"</div>
+        <p class="wl-text">C'est une excellente coéquipière, quelqu'un qui aime penser hors des sentiers battus et qui aime résoudre des problèmes de façon créative. Elle possède aussi cette rare capacité à décomposer des concepts complexes en exemples simples. Elle serait un atout pour n'importe quelle équipe !</p>
+        <div class="wl-author">
+          <div class="wl-avatar">KG</div>
+          <div>
+            <div class="wl-name">Kumar Gunasekaran</div>
+            <div class="wl-role">Collègue · Upbraining</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Spencer Goold -->
+      <div class="wl-card" data-cat="manager">
+        <span class="wl-badge badge-manager">Manager</span>
+        <div class="wl-qmark">"</div>
+        <p class="wl-text">Je ne peux que recommander Cynthia : c'est une coéquipière remarquable, quelqu'un qui aime innover et résoudre les problèmes avec créativité.</p>
+        <div class="wl-author">
+          <div class="wl-avatar">SG</div>
+          <div>
+            <div class="wl-name">Spencer Goold</div>
+            <div class="wl-role">Manager · AGIF</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Tanaya Amar -->
+      <div class="wl-card" data-cat="collegue">
+        <span class="wl-badge badge-collegue">Collègue</span>
+        <div class="wl-qmark">"</div>
+        <p class="wl-text">Une chose que j'admire chez Cynthia, c'est sa nature proactive, orientée vers les résultats. J'ai eu le privilège de travailler avec elle comme co-assistante pour un cours de Master. Chaque fois qu'une tâche nous était confiée, Cynthia s'y attaquait tout de suite. Elle semblait vraiment aimer son travail, et cette passion était très inspirante. Elle était aussi très innovante et cherchait toujours un moyen de rendre le cours plus intéressant. Cynthia est très investie dans son travail.</p>
+        <div class="wl-author">
+          <div class="wl-avatar">TA</div>
+          <div>
+            <div class="wl-name">Tanaya Amar</div>
+            <div class="wl-role">Collègue · Duke University</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PLACEHOLDER — ajouter vos futurs témoignages ici -->
+      <!-- Copier le bloc wl-card ci-dessus et adapter data-cat (eleve / collegue / manager) -->
+
+    </div>
+
+    <!-- CTA pour ajouter des témoignages -->
+    <div class="wl-add">
+      <h3>Vous avez travaillé avec moi ?</h3>
+      <p>Votre témoignage compte. Prenez deux minutes pour le partager.</p>
+      <a href="index.html#contact">Laisser un témoignage →</a>
+    </div>
+
+  </div>
+
+  <div class="wl-footer">
+    <p>© 2026 Cynthia Mayer &nbsp;·&nbsp; <a href="index.html">sylingual.com</a></p>
+  </div>
+
+  <script>
+    /* Filtres */
+    const btns = document.querySelectorAll('.wf-btn');
+    const cards = document.querySelectorAll('.wl-card');
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        cards.forEach(c => {
+          const match = f === 'all' || c.dataset.cat === f;
+          c.classList.toggle('hidden', !match);
+        });
+      });
+    });
+
+    /* Nav */
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+  </script>
+
+</body>
+</html>

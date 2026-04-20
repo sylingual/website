@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cynthia Mayer — Professeure de FLE, ingénieure, polyglotte. Pédagogie créative et ouverte sur le monde." />
+  <title>Cynthia Mayer — Professeure de FLE</title>
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- LEAFLET CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+
+  <!-- SITE CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- =============================================
+       NAVIGATION
+  ============================================= -->
+  <nav id="nav" role="navigation" aria-label="Navigation principale">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">Cynthia Mayer</a>
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#parcours">Parcours</a></li>
+        <li><a href="#realisations">Réalisations</a></li>
+        <li><a href="#temoignages">Témoignages</a></li>
+        <li><a href="#anecdotes">Anecdotes</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- =============================================
+       HERO
+  ============================================= -->
+  <section id="hero" aria-label="Présentation">
+    <canvas id="particles" aria-hidden="true"></canvas>
+    <!--
+      PHOTO OPTIONNELLE — Hero background
+      Si tu veux une photo de fond subtile en overlay sombre :
+      Ajoute style="background-image: url('assets/img/hero-bg.jpg')" sur la section
+      et background-size: cover; background-position: center; dans le CSS
+    -->
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">Ancienne ingénieure. Professeure de FLE. Perpétuellement curieuse.</p>
+
+      <h1 class="hero-name">
+        <span class="line"><span>Cynthia</span></span>
+        <span class="line"><span>Mayer</span></span>
+      </h1>
+
+      <p class="hero-philosophy">Pour moi, la langue est avant tout un lien social.<br>Une expérience positive à vivre.</p>
+
+      <p class="hero-sub">De San Francisco à Séoul, en passant par Robinson Crusoé.</p>
+
+      <a href="#apropos" class="hero-btn">
+        Découvrir mon univers
+        <span class="arrow">→</span>
+      </a>
+    </div>
+
+    <div class="scroll-indicator" aria-hidden="true">
+      <span>Défiler</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       À PROPOS
+  ============================================= -->
+  <section id="apropos" class="section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-num">01</span>
+        <h2 class="section-title">À propos</h2>
+      </div>
+
+      <div class="apropos-grid">
+
+        <div class="photo-wrap fade-up">
+          <div class="photo-frame">
+            <!--
+              PHOTO 1 — Portrait classe
+              Format : 3:4 vertical
+              Idée : toi debout, souriante, fond neutre ou salle de classe floue
+              → <img src="assets/img/portrait-classe.jpg" alt="Cynthia Mayer" />
+            -->
+            <div class="photo-placeholder">
+              <span class="icon">🖼</span>
+              <span>Portrait classe · 3:4</span>
+            </div>
+          </div>
+          <div class="photo-corner">M2<br>FLE</div>
+
+          <div class="photo-strip">
+            <!--
+              PHOTO 2 — En classe, avec les élèves
+              Format : carré
+              → <img src="assets/img/classe-action.jpg" alt="En classe" />
+            -->
+            <div class="strip-ph" title="Toi avec tes élèves en action">
+              <span>👩‍🏫</span>
+              <span>En classe</span>
+            </div>
+            <!--
+              PHOTO 3 — Sur ordi dans la nature / café
+              Format : carré
+              → <img src="assets/img/nature-ordi.jpg" alt="En extérieur" />
+            -->
+            <div class="strip-ph" title="Toi sur ordi, dans la nature">
+              <span>💻</span>
+              <span>Nature / café</span>
+            </div>
+            <!--
+              PHOTO 4 — Rêveuse / contemplative
+              Format : carré
+              → <img src="assets/img/reveuse.jpg" alt="Portrait rêveuse" />
+            -->
+            <div class="strip-ph" title="Toi, rêveuse">
+              <span>🌙</span>
+              <span>Rêveuse</span>
+            </div>
+          </div>
+
+          <div class="photo-langs">
+            <span class="lang-pill">🇫🇷 Français</span>
+            <span class="lang-pill">🇬🇧 English</span>
+            <span class="lang-pill">🇪🇸 Español</span>
+            <span class="lang-pill">🇩🇪 Deutsch</span>
+            <span class="lang-pill">🇰🇷 한국어</span>
+            <span class="lang-pill">🇯🇵 日本語</span>
+            <span class="lang-pill">🇨🇳 普通话</span>
+          </div>
+        </div>
+
+        <!-- Texte -->
+        <div class="apropos-text fade-up delay-2">
+          <p class="lead">J'aurais pu rester ingénieure. Centrale Nantes, Duke University, San Francisco. Puis j'ai compris ce qui me manquait : un impact humain réel, tangible, et positif. Il y a souvent un fossé entre les littéraires qui enseignent les langues et les ingénieurs qui conçoivent des outils pour eux. Je voulais le combler.</p>
+
+          <p>Aujourd'hui, je construis des cours comme je construisais des logiciels : avec de la rigueur, beaucoup d'analyse, et l'obsession que mon élève reparte non seulement avec quelque chose d'ancré durablement dans la tête, mais aussi un sourire.</p>
+
+          <p>Ma pédagogie est née de l'autre côté du bureau. J'ai appris sept langues, vécu en famille d'accueil à Osaka, survécu en mandarin à Pékin, essayé le coréen à travers mille méthodes. Je sais exactement ce que ça fait de ne rien comprendre... et c'est une force que j'ai pour me mettre à la place de mes élèves.</p>
+
+          <p>Actuellement en M2 de Didactique des Langues, je finalise mon stage à l'Alliance Française de Košice. Disponible pour des projets à l'intersection de la langue, de l'humain et de la technologie.</p>
+
+          <div class="stats-row">
+            <div class="stat fade-up delay-1">
+              <strong>40+</strong>
+              <span>pays traversés (et ça continue)</span>
+            </div>
+            <div class="stat fade-up delay-2">
+              <strong>7</strong>
+              <span>langues, du japonais au coréen</span>
+            </div>
+            <div class="stat fade-up delay-3">
+              <strong>A1→B2</strong>
+              <span>niveaux, et tous les chaos entre</span>
+            </div>
+            <div class="stat fade-up delay-4">
+              <strong>3</strong>
+              <span>continents</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       PARCOURS
+  ============================================= -->
+  <section id="parcours" class="section section-dark">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-num">02</span>
+        <h2 class="section-title">Parcours</h2>
+        <p class="section-sub">Seize marqueurs sur la carte. Chacun cache une histoire. Cliquez pour l'ouvrir.</p>
+      </div>
+
+      <div class="map-wrapper fade-up">
+        <div id="map" role="application" aria-label="Carte interactive des expériences"></div>
+      </div>
+
+      <div class="map-legend fade-up">
+        <div class="legend-item">
+          <div class="legend-dot" style="background:#1B998B"></div> Enseignement FLE
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background:#C9963A"></div> Formation
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background:#D4694A"></div> Expérience pro
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background:#8B5CF6"></div> Volontariat
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background:#5B6CC9"></div> Séjour linguistique
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       RÉALISATIONS
+  ============================================= -->
+  <section id="realisations" class="section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-num">03</span>
+        <h2 class="section-title">Réalisations</h2>
+        <p class="section-sub">Des supports construits pour de vraies classes, de vrais élèves. Pas des modèles : des outils. <a href="ressources.html" style="color:var(--canard); text-decoration:underline; text-underline-offset:3px;">Télécharger les supports →</a></p>
+      </div>
+
+      <div class="real-grid">
+
+        <!-- Carte 1 : Personnalités françaises -->
+        <article class="real-card fade-up" data-cat="pedagogique">
+          <div class="real-card-thumb" style="background: linear-gradient(135deg, #FEF3C7 0%, #FCD34D 100%);">
+            <!-- <img src="assets/supports/personnalites-apercu.jpg" alt="Aperçu Personnalités françaises"> -->
+            <div class="thumb-placeholder">🎭</div>
+          </div>
+          <div class="real-card-body">
+            <div class="card-tags">
+              <span class="card-tag tag-ped">Pédagogique</span>
+              <span class="card-tag tag-level">A2–B1</span>
+            </div>
+            <h3>Jeu des personnalités françaises</h3>
+            <p>Marie Curie, Simone Veil, Albert Camus... Qui sont ces visages qui ornent les murs des Alliances Françaises ? Un jeu pour apprendre à les reconnaître, et découvrir ce qu'ils ont de commun avec chaque élève.</p>
+          </div>
+        </article>
+
+        <!-- Carte 2 : Subjonctif + Suno -->
+        <article class="real-card fade-up delay-1" data-cat="pedagogique">
+          <div class="real-card-thumb" style="background: linear-gradient(135deg, #D1FAE5 0%, #059669 100%); position:relative;">
+            <!-- <img src="assets/supports/subjonctif-apercu.jpg" alt="Aperçu Subjonctif"> -->
+            <div class="thumb-placeholder">💍</div>
+            <div class="suno-badge">🎵 Chanson IA · Suno</div>
+          </div>
+          <div class="real-card-body">
+            <div class="card-tags">
+              <span class="card-tag tag-ped">Pédagogique</span>
+              <span class="card-tag tag-level">B1–B2</span>
+              <span class="card-tag tag-suno">Audio</span>
+            </div>
+            <h3>Subjonctif présent — avec une chanson</h3>
+            <p>Le subjonctif, ça se chante. J'ai créé une chanson sur Suno pour ancrer les structures. Les élèves repartent avec la mélodie en tête, et le subjonctif avec.</p>
+            <a href="https://suno.com/song/1377c43c-9b89-4740-a45f-1d62b3a6ec4b?sh=UMDHmCoHn7wrCdju" target="_blank" class="suno-link" rel="noopener">Écouter la chanson →</a>
+          </div>
+        </article>
+
+        <!-- Carte 3 : BDs -->
+        <article class="real-card fade-up delay-2" data-cat="pedagogique">
+          <div class="real-card-thumb" style="background: linear-gradient(135deg, #FEF9C3 0%, #FDE047 100%);">
+            <!-- <img src="assets/supports/bds-apercu.jpg" alt="Aperçu BDs françaises"> -->
+            <div class="thumb-placeholder">🦸</div>
+          </div>
+          <div class="real-card-body">
+            <div class="card-tags">
+              <span class="card-tag tag-ped">Pédagogique</span>
+              <span class="card-tag tag-level">B1</span>
+            </div>
+            <h3>Décrire une personne — héros de BD</h3>
+            <p>Astérix est roux, bedonnant, irascible, et fier de l'être. Décrire des personnages que tout le monde connaît, c'est parler de la France sans en avoir l'air.</p>
+          </div>
+        </article>
+
+        <!-- Carte 4 : Jeu pour danser — placeholder -->
+        <article class="real-card fade-up delay-3" data-cat="pedagogique">
+          <div class="real-card-thumb" style="background: linear-gradient(135deg, #FCE7F3 0%, #F9A8D4 100%);">
+            <!-- <img src="assets/supports/danse-apercu.jpg" alt="Aperçu jeu danse"> -->
+            <div class="thumb-placeholder">💃</div>
+          </div>
+          <div class="real-card-body">
+            <div class="card-tags">
+              <span class="card-tag tag-ped">Pédagogique</span>
+              <span class="card-tag tag-level">Tous niveaux</span>
+              <span class="card-tag" style="background:#FEF3C7;color:#92400E;">Nouveau</span>
+            </div>
+            <h3>Bougez et apprenez</h3>
+            <!-- Remplacer par la vraie description de votre jeu -->
+            <p style="color:var(--canard);font-size:0.8rem;font-style:italic;">✏️ Description à compléter — votre jeu pour danser et apprendre en mouvement.</p>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="real-cta fade-up">
+        <a href="ressources.html" class="real-cta-link">
+          Voir toutes mes réalisations &amp; télécharger les supports
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       ARTICLES & PUBLICATIONS
+  ============================================= -->
+  <section id="articles" class="section section-accent">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-num">03b</span>
+        <h2 class="section-title">Publications & Articles</h2>
+        <p class="section-sub">Technologie, pédagogie, langue française. Ma façon de mettre les mains dans le cambouis en public.</p>
+      </div>
+      <div class="articles-grid">
+
+        <div class="feed-col fade-up">
+          <div class="feed-header">
+            <span class="feed-dot" style="background:var(--canard)"></span>
+            <h3 class="feed-title">Atelier du Français</h3>
+            <a href="https://atelierdufrancaisparis.com/author/cynthia/" target="_blank" rel="noopener" class="feed-more">Voir tout →</a>
+          </div>
+          <p class="feed-desc">Série sur l'usage de l'IA en classe de FLE.</p>
+          <ul class="feed-list" id="feed-atelier">
+            <li class="feed-skeleton"></li>
+            <li class="feed-skeleton"></li>
+            <li class="feed-skeleton"></li>
+            <li class="feed-skeleton"></li>
+          </ul>
+        </div>
+
+        <div class="feed-col fade-up delay-2">
+          <div class="feed-header">
+            <span class="feed-dot" style="background:var(--gold)"></span>
+            <h3 class="feed-title">Upbraining</h3>
+            <a href="https://upbraining.net/blog" target="_blank" rel="noopener" class="feed-more">Voir tout →</a>
+          </div>
+          <p class="feed-desc">Pédagogie, productivité, apprentissage.</p>
+          <ul class="feed-list" id="feed-upbraining">
+            <li class="feed-skeleton"></li>
+            <li class="feed-skeleton"></li>
+            <li class="feed-skeleton"></li>
+            <li class="feed-skeleton"></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       TÉMOIGNAGES — CARROUSEL
+  ============================================= -->
+  <section id="temoignages" class="section section-dark">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-num">04</span>
+        <h2 class="section-title">Témoignages</h2>
+        <p class="section-sub">Des élèves, des collègues, des managers. Sur quatre continents.</p>
+      </div>
+    </div>
+
+    <div class="carousel-outer fade-up">
+      <div class="carousel-track" id="carousel-track">
+
+        <div class="quote-mini"><div class="qm-mark">"</div><p class="qm-text">Elle était toujours très bien préparée et expliquait les notions d'une façon claire et ludique. Un environnement bienveillant dans lequel je me sentais à l'aise pour poser toutes mes questions.</p><div class="qm-author"><div class="qm-av">MK</div><div><div class="qm-name">Minho Kim</div><div class="qm-role">Élève · A1</div></div></div></div>
+
+        <div class="quote-mini"><div class="qm-mark">"</div><p class="qm-text">Cynthia est une prof géniale ! Elle s'adapte à votre niveau et vous aide à progresser à partir de ce que vous connaissez déjà. Ses explications sont claires et efficaces.</p><div class="qm-author"><div class="qm-av">AL</div><div><div class="qm-name">Allison Lawrence</div><div class="qm-role">Élève · Cours particuliers</div></div></div></div>
+
+        <div class="quote-mini"><div class="qm-mark">"</div><p class="qm-text">Elle possède cette rare capacité à décomposer des concepts complexes en exemples simples. Elle serait un atout pour n'importe quelle équipe !</p><div class="qm-author"><div class="qm-av">KG</div><div><div class="qm-name">Kumar Gunasekaran</div><div class="qm-role">Collègue · Upbraining</div></div></div></div>
+
+        <div class="quote-mini"><div class="qm-mark">"</div><p class="qm-text">Elle s'adressait à elles par leur prénom. Elle a rattaché leur quotidien à ses enseignements. C'était un plaisir de travailler avec elle et d'améliorer mes méthodes d'enseignement.</p><div class="qm-author"><div class="qm-av">CD</div><div><div class="qm-name">Colette Dupré</div><div class="qm-role">Tutrice de stage · Belfort</div></div></div></div>
+
+        <div class="quote-mini"><div class="qm-mark">"</div><p class="qm-text">Chaque fois qu'une tâche nous était confiée, Cynthia s'y attaquait tout de suite. Elle semblait vraiment aimer son travail, et cette passion était très inspirante.</p><div class="qm-author"><div class="qm-av">TA</div><div><div class="qm-name">Tanaya Amar</div><div class="qm-role">Collègue · Duke University</div></div></div></div>
+
+        <div class="quote-mini"><div class="qm-mark">"</div><p class="qm-text">C'est une coéquipière remarquable, quelqu'un qui aime innover et résoudre les problèmes avec créativité.</p><div class="qm-author"><div class="qm-av">SG</div><div><div class="qm-name">Spencer Goold</div><div class="qm-role">Manager · AGIF</div></div></div></div>
+
+        <!-- Duplicate pour boucle infinie -->
+        <div class="quote-mini" aria-hidden="true"><div class="qm-mark">"</div><p class="qm-text">Elle était toujours très bien préparée et expliquait les notions d'une façon claire et ludique. Un environnement bienveillant dans lequel je me sentais à l'aise pour poser toutes mes questions.</p><div class="qm-author"><div class="qm-av">MK</div><div><div class="qm-name">Minho Kim</div><div class="qm-role">Élève · A1</div></div></div></div>
+
+        <div class="quote-mini" aria-hidden="true"><div class="qm-mark">"</div><p class="qm-text">Cynthia est une prof géniale ! Elle s'adapte à votre niveau et vous aide à progresser à partir de ce que vous connaissez déjà. Ses explications sont claires et efficaces.</p><div class="qm-author"><div class="qm-av">AL</div><div><div class="qm-name">Allison Lawrence</div><div class="qm-role">Élève · Cours particuliers</div></div></div></div>
+
+        <div class="quote-mini" aria-hidden="true"><div class="qm-mark">"</div><p class="qm-text">Elle possède cette rare capacité à décomposer des concepts complexes en exemples simples. Elle serait un atout pour n'importe quelle équipe !</p><div class="qm-author"><div class="qm-av">KG</div><div><div class="qm-name">Kumar Gunasekaran</div><div class="qm-role">Collègue · Upbraining</div></div></div></div>
+
+        <div class="quote-mini" aria-hidden="true"><div class="qm-mark">"</div><p class="qm-text">Elle s'adressait à elles par leur prénom. Elle a rattaché leur quotidien à ses enseignements. C'était un plaisir de travailler avec elle.</p><div class="qm-author"><div class="qm-av">CD</div><div><div class="qm-name">Colette Dupré</div><div class="qm-role">Tutrice de stage · Belfort</div></div></div></div>
+
+        <div class="quote-mini" aria-hidden="true"><div class="qm-mark">"</div><p class="qm-text">Chaque fois qu'une tâche nous était confiée, Cynthia s'y attaquait tout de suite. Elle semblait vraiment aimer son travail, et cette passion était très inspirante.</p><div class="qm-author"><div class="qm-av">TA</div><div><div class="qm-name">Tanaya Amar</div><div class="qm-role">Collègue · Duke University</div></div></div></div>
+
+        <div class="quote-mini" aria-hidden="true"><div class="qm-mark">"</div><p class="qm-text">C'est une coéquipière remarquable, quelqu'un qui aime innover et résoudre les problèmes avec créativité.</p><div class="qm-author"><div class="qm-av">SG</div><div><div class="qm-name">Spencer Goold</div><div class="qm-role">Manager · AGIF</div></div></div></div>
+
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="wall-cta fade-up">
+        <a href="wall-of-love.html" class="wall-cta-link">Voir tous les témoignages →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       ANECDOTES
+  ============================================= -->
+  <section id="anecdotes" class="section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-num">05</span>
+        <h2 class="section-title">Anecdotes</h2>
+        <p class="section-sub">Parce qu'enseigner, c'est aussi vivre des moments qu'on n'oublie pas.</p>
+      </div>
+
+      <div class="anecdotes-grid">
+
+        <article class="anecdote-card fade-up">
+          <div class="anecdote-header">
+            <div class="anecdote-emoji">🏝️</div>
+            <div class="anecdote-meta">
+              <div class="anecdote-where">Chili · 2022</div>
+              <h3>Robinson Crusoé et les tablettes numériques</h3>
+            </div>
+          </div>
+          <!--
+            PHOTO OPTIONNELLE — Anecdote Chili
+            Format paysage, dans le corps de la carte
+            Idée : toi sur l'île, avec les habitants, ou paysage de Robinson Crusoé
+            → <img src="assets/img/chile-robinson.jpg" alt="Île Robinson Crusoé" style="width:100%;border-radius:8px;margin-bottom:1rem;" />
+          -->
+          <div class="anecdote-body">
+            Lenovo cherchait quelqu'un pour enseigner les nouvelles technologies aux habitants de l'île de Robinson Crusoé. Celle du roman, vraiment. J'ai levé la main. Ce que j'avais préparé n'a servi à rien. Ce que j'ai improvisé m'a tout appris.
+            <br><br>
+            <em style="color: var(--canard); font-size: 0.82rem;">✏️ [Remplacer par votre anecdote complète]</em>
+          </div>
+        </article>
+
+        <!-- ANECDOTE 2 — À remplir -->
+        <article class="anecdote-card fade-up delay-1">
+          <div class="anecdote-header">
+            <div class="anecdote-emoji">📖</div>
+            <div class="anecdote-meta">
+              <div class="anecdote-where">Belfort, France · 2023</div>
+              <h3>Apprendre à lire à 50 ans</h3>
+            </div>
+          </div>
+          <div class="anecdote-body">
+            Certaines n'avaient jamais tenu un crayon. D'autres avaient traversé la mer pour offrir à leurs enfants une vie qu'elles n'avaient pas eue. On faisait du FLE, mais on faisait surtout autre chose. Le plus beau stage de ma vie, et le plus difficile.
+            <br><br>
+            <em style="color: var(--canard); font-size: 0.82rem;">✏️ [Remplacer par votre anecdote complète]</em>
+          </div>
+        </article>
+
+        <!-- ANECDOTE 3 — À remplir -->
+        <article class="anecdote-card fade-up delay-2">
+          <div class="anecdote-header">
+            <div class="anecdote-emoji">🇰🇷</div>
+            <div class="anecdote-meta">
+              <div class="anecdote-where">Corée du Sud · 2024 / 2025</div>
+              <h3>Enseigner le français dans un monde en coréen</h3>
+            </div>
+          </div>
+          <div class="anecdote-body">
+            J'ai passé un an à Séoul à ne rien comprendre. Les panneaux, les menus, les blagues. Mon frère, qui a de l'autisme, ne comprenait pas mieux que moi. Et pourtant, il souriait. Ça m'a rappelé pourquoi j'enseigne : non pas pour que les gens comprennent tout, mais pour qu'ils aient envie d'essayer.
+            <br><br>
+            <em style="color: var(--canard); font-size: 0.82rem;">✏️ [Remplacer par votre anecdote complète]</em>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       CONTACT
+  ============================================= -->
+  <section id="contact" class="section section-dark">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-num">06</span>
+        <h2 class="section-title">Contact</h2>
+      </div>
+
+      <div class="contact-grid fade-up">
+
+        <div>
+          <p class="contact-intro">Vous cherchez une enseignante qui arrive préparée, s'adapte vite, et n'a pas peur d'essayer quelque chose de nouveau ? Que ce soit pour une Alliance Française, un projet EdTech ou un programme combinant technologie et apprentissage des langues : on a peut-être quelque chose à construire ensemble.</p>
+          <div class="contact-links">
+            <a href="mailto:mayer.cynthia.ko@gmail.com" class="contact-link">
+              <span class="link-icon">✉</span> mayer.cynthia.ko@gmail.com
+            </a>
+            <a href="https://linkedin.com/in/mayercynthia" target="_blank" rel="noopener" class="contact-link">
+              <span class="link-icon">🔗</span> linkedin.com/in/mayercynthia
+            </a>
+            <a href="assets/cv/CynthiaMayer_CV.pdf" target="_blank" class="contact-link">
+              <span class="link-icon">📄</span> Télécharger mon CV
+            </a>
+          </div>
+        </div>
+
+        <!-- Netlify Forms : ajouter data-netlify="true" pour activer -->
+        <form id="contact-form" name="contact" method="POST" data-netlify="true" class="contact-form" novalidate>
+          <input type="hidden" name="form-name" value="contact" />
+          <div class="form-row">
+            <input type="text"  name="nom"    placeholder="Nom"   required />
+            <input type="email" name="email"  placeholder="Email" required />
+          </div>
+          <input type="text" name="sujet" placeholder="Sujet (Alliance Française, projet edtech...)" />
+          <textarea name="message" rows="5" placeholder="Votre message..." required></textarea>
+          <button type="submit" class="form-submit">Envoyer →</button>
+          <p id="form-message" style="font-size:0.85rem; margin-top:0.5rem;"></p>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       FOOTER
+  ============================================= -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <span>© 2026 Cynthia Mayer</span>
+        <a href="https://sylingual.com">sylingual.com</a>
+        <span>Fait avec ❤ et beaucoup de café</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =============================================
+       SCRIPTS
+  ============================================= -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
