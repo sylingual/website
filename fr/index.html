@@ -1,0 +1,844 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Sylingual par Cynthia Mayer · Designing engaging language learning experiences" />
+<meta property="og:type"        content="website" />
+<meta property="og:url"         content="https://sylingual.fr/fr/" />
+<meta property="og:title"       content="Sylingual · par Cynthia Mayer" />
+<meta property="og:description" content="Designing engaging language learning experiences" />
+<meta property="og:image"       content="https://sylingual.fr/images/hero_image_sylingual.gif" />
+<meta name="twitter:card"       content="summary_large_image" />
+<title>Sylingual · par Cynthia Mayer</title>
+<link rel="icon" type="image/png" href="../images/favicon.png" />
+<link rel="apple-touch-icon" href="../images/favicon.png" />
+<link rel="alternate" hreflang="fr" href="https://sylingual.fr/fr/" />
+<link rel="alternate" hreflang="en" href="https://sylingual.fr/en/" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&family=Caveat:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<style>body{opacity:0}</style>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <span class="brand">Sylingual</span>
+      <span class="by">par Cynthia Mayer</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about" data-i18n="nav.about">À propos</a></li>
+      <li><a href="#cat-1">FLE</a></li>
+      <li><a href="#cat-2" data-i18n="nav.pedagogy">Pédagogie</a></li>
+      <li><a href="#cat-3" data-i18n="nav.ia">IA</a></li>
+      <li><a href="#formations" data-i18n="nav.formations">Formations</a></li>
+      <li><a href="#temoignages" data-i18n="nav.testimonials">Témoignages</a></li>
+      <li><a href="../en/index.html" class="nav-lang-switch" id="langSwitch" data-i18n="ui.lang_switch">EN</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
+    </ul>
+    <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ===== MENU MOBILE ===== -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <ul>
+    <li><a href="#about" data-i18n="nav.about">À propos</a></li>
+    <li><a href="#cat-1">FLE</a></li>
+    <li><a href="#cat-2" data-i18n="nav.pedagogy">Pédagogie</a></li>
+    <li><a href="#cat-3" data-i18n="nav.ia">IA</a></li>
+    <li><a href="#formations" data-i18n="nav.formations">Formations</a></li>
+    <li><a href="#temoignages" data-i18n="nav.testimonials">Témoignages</a></li>
+    <li><a href="#contact" class="mob-cta">Contact</a></li>
+  </ul>
+</div>
+
+<!-- ===== HERO (light) ===== -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1 data-i18n="hero.title">Pour des langues <span class="accent-strong">vraiment</span> vivantes</h1>
+      <p class="hero-sub" data-i18n="hero.sub">J'explore comment <strong>pédagogie, créativité et technologie</strong> peuvent rendre l'apprentissage des langues plus efficace et motivant.</p>
+      <div class="identity-pills">
+        <span class="identity-pill pill-eng" data-i18n="hero.pill1">Enseignante</span>
+        <span class="identity-pill pill-ing" data-i18n="hero.pill2">Ingénieure</span>
+        <span class="identity-pill pill-art" data-i18n="hero.pill3">Artiste</span>
+        <span class="identity-pill pill-pol" data-i18n="hero.pill4">Polyglotte</span>
+      </div>
+      <div class="cta-row">
+        <a href="#cat-1" class="btn primary" data-i18n="hero.cta1">Voir le portfolio</a>
+        <a href="#formations" class="btn ghost" data-i18n="hero.cta2">Mes formations</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="../images/hero_image_sylingual.gif" alt="Cynthia Mayer" />
+    </div>
+  </div>
+</section>
+
+<!-- ===== NOW PLAYING (light) ===== -->
+<div class="now-playing-strip">
+  <div class="np-card">
+    <div class="np-label"><span class="np-dot"></span>Now playing</div>
+    <ul class="np-list">
+      <li data-i18n="np.item1">En résidence à <em><a href="https://www.facebook.com/AFKosice/">l'Alliance Française de Košice</a></em>, en Slovaquie.</li>
+      <li data-i18n="np.item2">Contribution d'articles sur <em><a href="https://atelierdufrancaisparis.com/author/cynthia/">l'Atelier du Français</a></em>.</li>
+      <li data-i18n="np.item3">En écriture d'un mémoire de M2 sur <em>les tuteurs IA en langues</em>.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== À PROPOS (DARK) ===== -->
+<section id="about" class="section dark" data-cat="about">
+  <div class="section-grid">
+    <aside class="section-label">
+      <span class="num">·</span>
+      <span class="lbl" data-i18n="about.label">À propos</span>
+      <p class="desc" data-i18n="about.desc">D'où je viens, pourquoi je suis.</p>
+    </aside>
+    <div class="section-content">
+      <div class="about-prose">
+        <p data-i18n="about.p1">Bonjour, moi c'est <strong>Cynthia</strong>. Française de l'Est et nomade de cœur, j'ai vécu entre la France, le Japon, les États-Unis, la Chine et la Corée du Sud.</p>
+        <p data-i18n="about.p2">Après un double parcours ingénieur/business, artiste de cœur et aujourd'hui spécialisée en didactique des langues, je conçois des expériences d'apprentissage mêlant <strong>pédagogie, créativité et technologie</strong>.</p>
+        <p data-i18n="about.p3">Je m'intéresse à ce qui aide à <strong>mieux apprendre une langue</strong>, et notamment comment les outils numériques peuvent y contribuer.</p>
+        <p data-i18n="about.p4">Ici, vous trouverez mon atelier ouvert sur cette question : fiches, vidéos et chansons pédagogiques, réflexions, publications, expérimentations autour de l'IA et des applis au service de l'apprentissage des langues.</p>
+
+
+        <div class="about-langues">
+          <h4 data-i18n="about.languages">Langues parlées</h4>
+          <div class="lang-flags">
+            <span class="lang-flag" data-tip="Français · natif" data-i18n-tip="about.lang.fr">🇫🇷</span>
+            <span class="lang-flag" data-tip="Anglais · bilingue" data-i18n-tip="about.lang.en">🇬🇧</span>
+            <span class="lang-flag" data-tip="Allemand · B2" data-i18n-tip="about.lang.de">🇩🇪</span>
+            <span class="lang-flag" data-tip="Espagnol · B2" data-i18n-tip="about.lang.es">🇪🇸</span>
+            <span class="lang-flag" data-tip="Coréen · A2" data-i18n-tip="about.lang.ko">🇰🇷</span>
+            <span class="lang-flag" data-tip="Japonais · A2" data-i18n-tip="about.lang.ja">🇯🇵</span>
+            <span class="lang-flag" data-tip="Mandarin · A1" data-i18n-tip="about.lang.zh">🇨🇳</span>
+            <span class="lang-flag" data-tip="Slovaque · A1" data-i18n-tip="about.lang.sk">🇸🇰</span>
+          </div>
+        </div>
+
+        <div class="about-meta">
+
+          <!-- ── FORMATION ── -->
+          <div class="about-block">
+            <h4 data-i18n="about.formation_block">Formation</h4>
+            <div class="formation-grid">
+
+              <div class="formation-item">
+                <div class="uni-logo">
+                  <img src="../images/logo-LeMansUniversite.png" alt="Université du Mans"/>
+                </div>
+                <div>
+                  <span class="xp-title" data-i18n="about.edu1.title">Master DDL FLE</span>
+                  <span class="xp-org" data-i18n="about.edu1.org">M1 Mention TB</span>
+                  <span class="xp-place">France · <span class="xp-date">2022–2026</span></span>
+                </div>
+              </div>
+
+              <div class="formation-item">
+                <div class="uni-logo">
+                  <img src="../images/Université_de_Rouen.png" alt="Université de Rouen"/>
+                </div>
+                <div>
+                  <span class="xp-title" data-i18n="about.edu2.title">Licence Sciences du langage</span>
+                  <span class="xp-org" data-i18n="about.edu2.org">Mention TB</span>
+                  <span class="xp-place">France · <span class="xp-date">2022</span></span>
+                </div>
+              </div>
+
+              <div class="formation-item">
+                <div class="uni-logo">
+                  <img src="../images/Duke_University_logo.svg.png" alt="Duke University"/>
+                </div>
+                <div>
+                  <span class="xp-title">Master of Engineering Management</span>
+                  <span class="xp-place">États-Unis · <span class="xp-date">2018</span></span>
+                </div>
+              </div>
+
+              <div class="formation-item">
+                <div class="uni-logo">
+                  <img src="../images/Logo_ECN.svg" alt="École Centrale de Nantes"/>
+                </div>
+                <div>
+                  <span class="xp-title" data-i18n="about.edu4.title">Diplôme d'ingénieure</span>
+                  <span class="xp-place">France · <span class="xp-date">2018</span></span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LOGOS EXPÉRIENCES ===== -->
+<div class="logos-band">
+  <div class="logos-marquee">
+    <div class="logos-track logos-track--1">
+      <div class="logo-chip-uni"><img src="../images/277578879_392505299469246_3280933915993032370_n-removebg-preview%20(4).png" alt="Alliance Française de Košice" /></div>
+      <div class="logo-chip-uni"><img src="../images/cropped-Atlelier-logo-1.png" alt="Atelier du Français" /></div>
+      <div class="logo-chip-uni"><img src="../images/edume-logo.webp" alt="EduMe" /></div>
+      <div class="logo-chip-uni"><img src="../images/logo-upbraining.png" alt="Upbraining" /></div>
+      <div class="logo-chip"><img src="../images/Visa_Inc._logo_(2021%E2%80%93present).svg.png" alt="Visa" /></div>
+      <div class="logo-chip"><img src="../images/Lenovo_logo_2015.svg.png" alt="Lenovo" /></div>
+      <div class="logo-chip"><img src="../images/DXC_Technology_logo_(2021).svg.png" alt="DXC Technology" /></div>
+      <div class="logo-chip"><img src="../images/Thyssenkrupp_AG_Logo_2015.svg.png" alt="ThyssenKrupp" /></div>
+      <!-- duplicate for seamless loop -->
+      <div class="logo-chip-uni" aria-hidden="true"><img src="../images/277578879_392505299469246_3280933915993032370_n-removebg-preview%20(4).png" alt="" /></div>
+      <div class="logo-chip-uni" aria-hidden="true"><img src="../images/cropped-Atlelier-logo-1.png" alt="" /></div>
+      <div class="logo-chip-uni" aria-hidden="true"><img src="../images/edume-logo.webp" alt="" /></div>
+      <div class="logo-chip-uni" aria-hidden="true"><img src="../images/logo-upbraining.png" alt="" /></div>
+      <div class="logo-chip" aria-hidden="true"><img src="../images/Visa_Inc._logo_(2021%E2%80%93present).svg.png" alt="" /></div>
+      <div class="logo-chip" aria-hidden="true"><img src="../images/Lenovo_logo_2015.svg.png" alt="" /></div>
+      <div class="logo-chip" aria-hidden="true"><img src="../images/DXC_Technology_logo_(2021).svg.png" alt="" /></div>
+      <div class="logo-chip" aria-hidden="true"><img src="../images/Thyssenkrupp_AG_Logo_2015.svg.png" alt="" /></div>
+    </div>
+  </div>
+  <div class="logos-marquee">
+    <div class="logos-track logos-track--2">
+      <div class="logo-chip-uni"><img src="../images/academiehotelierpresov.jpg" alt="Académie hôtelière de Prešov" /></div>
+      <div class="logo-chip-uni"><img src="../images/evangele_logo.jpg" alt="Gymnázium évangélique" /></div>
+      <div class="logo-chip-uni"><img src="../images/gymmichal2.png" alt="Gymnázium sv. Michala" /></div>
+      <div class="logo-chip-uni"><img src="../images/gymnasiumrayman.jpg" alt="Gymnázium Raymana" /></div>
+      <div class="logo-chip-uni"><img src="../images/Pavol_Horov_LOGO.gif" alt="Gymnázium Pavla Horova" /></div>
+      <div class="logo-chip-uni"><img src="../images/presovskola.jpg" alt="École à Prešov" /></div>
+      <div class="logo-chip-uni"><img src="../images/tuke.png" alt="TUKE" /></div>
+      <!-- duplicate for seamless loop -->
+      <div class="logo-chip-uni" aria-hidden="true"><img src="../images/academiehotelierpresov.jpg" alt="" /></div>
+      <div class="logo-chip-uni" aria-hidden="true"><img src="../images/evangele_logo.jpg" alt="" /></div>
+      <div class="logo-chip-uni" aria-hidden="true"><img src="../images/gymmichal2.png" alt="" /></div>
+      <div class="logo-chip-uni" aria-hidden="true"><img src="../images/gymnasiumrayman.jpg" alt="" /></div>
+      <div class="logo-chip-uni" aria-hidden="true"><img src="../images/Pavol_Horov_LOGO.gif" alt="" /></div>
+      <div class="logo-chip-uni" aria-hidden="true"><img src="../images/presovskola.jpg" alt="" /></div>
+      <div class="logo-chip-uni" aria-hidden="true"><img src="../images/tuke.png" alt="" /></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CAT 1 — FLE (light) ===== -->
+<section id="cat-1" class="section" data-cat="i">
+  <div class="section-grid">
+    <aside class="section-label">
+      <span class="num">i.</span>
+      <span class="lbl" data-i18n="fle.label">Pédagogie du FLE</span>
+      <p class="desc" data-i18n="fle.desc">Fiches pédagogiques et publications sur le FLE.</p>
+    </aside>
+    <div class="section-content">
+      <div class="section-h">
+        <h2 data-i18n="fle.h2">Pédagogie <em>du FLE</em></h2>
+        <p class="lead" data-i18n="fle.lead">Exemples de mes activités les plus engageantes conçues pour mes classes, et réflexions sur la pédagogie en didactique des langues.</p>
+      </div>
+
+      <h4 class="subsection-h">
+        <span data-i18n="fle.sub1.title">Fiches pédagogiques</span>
+        <span class="ct" data-i18n="fle.sub1.count">5 fiches</span>
+      </h4>
+
+      <ul class="entries">
+        <li class="entry-fiche">
+          <div class="entry-fiche-illus if-bleu"><img src="../images/jeu-personnalites.jpg"></div>
+          <div class="entry-fiche-body">
+            <div class="entry-meta-top">
+              <span class="lvl lvl-a2"><span class="lvl-dot"></span>A1-B1</span><span>·</span>
+              <span>👥 1-30</span><span>·</span>
+              <span>⏱ 30 min</span><span>·</span>
+              <span data-i18n="fle.fiche1.audience">Ados - Adultes</span>
+            </div>
+            <h3 class="entry-title"><a href="https://docs.google.com/document/d/1bCAU_Ok_uKIv_QD6cfNgPxHmWgwUwvbXkMJPzHMcvD8/edit?tab=t.0#heading=h.vpn1li3c8gt2">Jeu des personnalités & régions françaises</a></h3>
+            <p class="entry-desc">Découvrir les figures & lieux emblématiques français à travers leurs photos et la construction collaborative d'histoires.</p>
+            <p class="entry-note" data-i18n="fle.fiche1.note">mon best-seller dans mes visites de classes en Slovaquie</p>
+          </div>
+          <a href="https://docs.google.com/document/d/1bCAU_Ok_uKIv_QD6cfNgPxHmWgwUwvbXkMJPzHMcvD8/edit?tab=t.0#heading=h.vpn1li3c8gt2" download class="entry-act" data-i18n="ui.download">↓ Télécharger</a>
+        </li>
+
+        <li class="entry-fiche">
+          <div class="entry-fiche-illus if-bleu"><img src="../images/jeu-bd.jpg"></div>
+          <div class="entry-fiche-body">
+            <div class="entry-meta-top">
+              <span class="lvl lvl-a1"><span class="lvl-dot"></span>A1</span><span>·</span>
+              <span>👥 1-20</span><span>·</span>
+              <span>⏱ 30 min</span><span>·</span>
+              <span data-i18n="fle.fiche2.audience">Enfants - Ados</span>
+            </div>
+            <h3 class="entry-title"><a href="https://docs.google.com/document/d/1bCAoviHWyQhk6iqHg5lt-kl3O9NpC-mIKqDtMivtCzA/edit?tab=t.0#heading=h.cib7ti279rd" data-i18n="fle.fiche2.title">Jeu des héros de BD</a></h3>
+            <p class="entry-desc" data-i18n="fle.fiche2.desc">Découvrir les héros de BD français tout en pratiquant le vocabulaire de la description physique.</p>
+            <p class="entry-note" data-i18n="fle.fiche2.note">il n'y a pas qu'Astérix comme bande dessinée culte !</p>
+          </div>
+          <a href="https://docs.google.com/document/d/1bCAoviHWyQhk6iqHg5lt-kl3O9NpC-mIKqDtMivtCzA/edit?tab=t.0#heading=h.cib7ti279rd" download class="entry-act" data-i18n="ui.download">↓ Télécharger</a>
+        </li>
+
+        <li class="entry-fiche">
+          <div class="entry-fiche-illus if-bleu"><img src="../images/jeu-magasin.jpg"></div>
+          <div class="entry-fiche-body">
+            <div class="entry-meta-top">
+              <span class="lvl lvl-a1"><span class="lvl-dot"></span>A1</span><span>·</span>
+              <span>👥 1-20</span><span>·</span>
+              <span>⏱ 30 min</span><span>·</span>
+              <span data-i18n="fle.fiche2.audience">Enfants - Ados</span>
+            </div>
+            <h3 class="entry-title"><a href="https://docs.google.com/document/d/1lHcdywlSjuMGlEF5MTlArtyKRrjRSNe0szZhMG0wzfc/edit?tab=t.0#heading=h.vra5od9cblyz" data-i18n="fle.fiche3.title">Jeux sur les prépositions de lieux</a></h3>
+            <p class="entry-desc" data-i18n="fle.fiche3.desc">Une simulation de magasin, un serveur fou, des mini-activités pour s'entraîner aux prépositions de lieux.</p>
+            <p class="entry-note" data-i18n="fle.fiche3.note">le tout de façon kinesthésique, debout et ensuite à table</p>
+          </div>
+          <a href="https://docs.google.com/document/d/1lHcdywlSjuMGlEF5MTlArtyKRrjRSNe0szZhMG0wzfc/edit?tab=t.0#heading=h.vra5od9cblyz" download class="entry-act" data-i18n="ui.download">↓ Télécharger</a>
+        </li>
+
+        <li class="entry-fiche">
+          <div class="entry-fiche-illus if-bleu"><img src="../images/jeu-fete.jpg"></div>
+          <div class="entry-fiche-body">
+            <div class="entry-meta-top">
+              <span class="lvl lvl-a2"><span class="lvl-dot"></span>A1-A2</span><span>·</span>
+              <span>👥 1-20</span><span>·</span>
+              <span>⏱ 30 min</span><span>·</span>
+              <span data-i18n="fle.fiche4.audience">Ados</span>
+            </div>
+            <h3 class="entry-title"><a href="https://docs.google.com/document/d/1-iD0E_3AhZKPn7DWEdJxDCGPcPGgY753wOcToA6v_LI/edit?tab=t.0" data-i18n="fle.fiche4.title">Utiliser l'impératif et les verbes pronominaux</a></h3>
+            <p class="entry-desc" data-i18n="fle.fiche4.desc">L'apprenant devient coach sportif ou de yoga, puis l'ami qui aide l'autre à se préparer à une fête.</p>
+            <p class="entry-note" data-i18n="fle.fiche4.note">on peut finir par de la danse !</p>
+          </div>
+          <a href="https://docs.google.com/document/d/1-iD0E_3AhZKPn7DWEdJxDCGPcPGgY753wOcToA6v_LI/edit?tab=t.0" download class="entry-act" data-i18n="ui.download">↓ Télécharger</a>
+        </li>
+      </ul>
+
+      <h4 class="subsection-h">
+        <span data-i18n="fle.sub2.title">Publications · Horizons FLE</span>
+        <span class="ct" data-i18n="fle.sub2.count">4 articles</span>
+      </h4>
+
+      <ul class="entries">
+        <li class="entry">
+          <span class="entry-date">2025</span>
+          <div class="entry-body">
+            <div class="entry-meta-top">
+              <span data-i18n="label.horizons_fle">Article · Horizons FLE</span><span>·</span>
+              <span class="lvl lvl-b1"><span class="lvl-dot"></span><span data-i18n="badge.analyse">Analyse</span></span><span>·</span>
+              <span data-i18n="read.11min">11 min de lecture</span>
+            </div>
+            <h3 class="entry-title"><a href="https://horizonsfle.com/janalyse-les-ameliorations-dun-cours-de-langue-de-mandarin/">J’analyse les améliorations d’un cours de langue de mandarin</a></h3>
+            <p class="entry-desc" data-i18n="fle.art1.desc">Disposition de la salle, attitude de l’enseignant, rôle du groupe, mémorisation du vocabulaire</p>
+            </div>
+          <a href="https://horizonsfle.com/janalyse-les-ameliorations-dun-cours-de-langue-de-mandarin/"><span class="entry-act" data-i18n="ui.read">→ Lire</span></a>
+        </li>
+
+        <li class="entry">
+          <span class="entry-date">2025</span>
+          <div class="entry-body">
+            <div class="entry-meta-top">
+              <span data-i18n="label.horizons_fle">Article · Horizons FLE</span><span>·</span>
+              <span class="lvl lvl-b1"><span class="lvl-dot"></span><span data-i18n="badge.doc_exemple">Document-Exemple</span></span><span>·</span>
+              <span data-i18n="read.17min">17 min de lecture</span>
+            </div>
+            <h3 class="entry-title"><a href="https://horizonsfle.com/ma-philosophie-pour-une-evaluation-plus-juste-un-exemple/" data-i18n="fle.art2.title">Ma philosophie pour une évaluation plus juste : un exemple</a></h3>
+            <p class="entry-desc" data-i18n="fle.art2.desc">Problèmes rencontrés dans les évaluations sommatives et des solutions pour y remédier</p>
+          </div>
+          <span class="entry-act"><a href="https://horizonsfle.com/ma-philosophie-pour-une-evaluation-plus-juste-un-exemple/">→ Lire</a></span>
+        </li>
+
+        <li class="entry">
+          <span class="entry-date">2025</span>
+          <div class="entry-body">
+            <div class="entry-meta-top">
+              <span data-i18n="label.horizons_fle">Article · Horizons FLE</span><span>·</span>
+              <span class="lvl lvl-b1"><span class="lvl-dot"></span><span data-i18n="badge.temoignage">Témoignage</span></span><span>·</span>
+              <span data-i18n="read.6min">6 min de lecture</span>
+            </div>
+            <h3 class="entry-title"><a href="https://horizonsfle.com/comment-lenseignant-peut-influencer-la-perception-dune-langue/">Comment l’enseignant peut influencer la perception d’une langue</a></h3>
+            <p class="entry-desc" data-i18n="fle.art3.desc">Le concept de représentation linguistique comme facteur de motivation dans l'apprentissage</p>
+          </div>
+          <span class="entry-act"><a href="https://horizonsfle.com/comment-lenseignant-peut-influencer-la-perception-dune-langue/">→ Lire</a></span>
+        </li>
+
+        <li class="entry">
+          <span class="entry-date">2025</span>
+          <div class="entry-body">
+            <div class="entry-meta-top">
+              <span data-i18n="label.horizons_fle">Article · Horizons FLE</span><span>·</span>
+              <span class="lvl lvl-b1"><span class="lvl-dot"></span><span data-i18n="badge.ressource">Ressource</span></span><span>·</span>
+              <span data-i18n="read.15min">15 min de lecture</span>
+            </div>
+            <h3 class="entry-title"><a href="https://horizonsfle.com/enseigner-les-vetements-et-les-couleurs-lexemple-du-mandarin/">Enseigner les vêtements et les couleurs : l’exemple du mandarin</a></h3>
+            <p class="entry-desc" data-i18n="fle.art4.desc">2 exercices proposés : le catalogue et la sortie en magasin</p>
+          </div>
+          <span class="entry-act"><a href="https://horizonsfle.com/enseigner-les-vetements-et-les-couleurs-lexemple-du-mandarin/">→ Lire</a></span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CAT 2 — Pédagogie générale (light-warm) ===== -->
+<section id="cat-2" class="section light-warm" data-cat="ii">
+  <div class="section-grid">
+    <aside class="section-label">
+      <span class="num">ii.</span>
+      <span class="lbl" data-i18n="ped.label">Pédagogie générale</span>
+      <p class="desc" data-i18n="ped.desc">Articles d'un point de vue neurosciences sur l'apprentissage général.</p>
+    </aside>
+    <div class="section-content">
+      <div class="section-h">
+        <h2 data-i18n="ped.h2">Pédagogie <em>générale</em></h2>
+        <p class="lead" data-i18n="ped.lead">Une sélection de mes derniers articles co-publiés dans le blog de l'institut de formation <a href="https://www.upbraining.net/">Upbraining</a> (ghostwriting), sur la pédagogie générale.</p>
+      </div>
+
+      <div class="section-photo-with-entries">
+        <div class="section-photo">
+          <img src="../images/upbraining-formation.jpeg" alt="Formation Upbraining à l'AF de Kosice en 2026" />
+        </div>
+        <ul class="entries">
+        <li class="entry">
+          <span class="entry-date">14.04.26</span>
+          <div class="entry-body">
+            <div class="entry-meta-top">
+              <span data-i18n="label.pedagogie_tag">Pédagogie</span><span>·</span>
+              <span data-i18n="read.8min">8 min de lecture</span>
+            </div>
+            <h3 class="entry-title"><a href="https://www.upbraining.net/blog/comparer-lenfant-frein-apprentissage-7764/">Comparer l’enfant : un frein majeur à l’apprentissage</a></h3>
+            </div>
+          <span class="entry-act"><a href="https://www.upbraining.net/blog/comparer-lenfant-frein-apprentissage-7764/">→ Lire</a></span>
+        </li>
+
+         <li class="entry">
+          <span class="entry-date">05.03.26</span>
+          <div class="entry-body">
+            <div class="entry-meta-top">
+              <span data-i18n="label.emotions_tag">Emotions</span><span>·</span>
+              <span data-i18n="read.8min">8 min de lecture</span>
+            </div>
+            <h3 class="entry-title"><a href="https://www.upbraining.net/blog/etre-heureux-pour-bien-apprendre-7249/" data-i18n="ped.art2.title">Être heureux pour bien apprendre</a></h3>
+            </div>
+          <span class="entry-act"><a href="https://www.upbraining.net/blog/etre-heureux-pour-bien-apprendre-7249/">→ Lire</a></span>
+        </li>
+
+          <li class="entry">
+          <span class="entry-date">25.02.26</span>
+          <div class="entry-body">
+            <div class="entry-meta-top">
+              <span data-i18n="label.emotions_tag">Emotions</span><span>·</span>
+              <span data-i18n="read.10min">10 min de lecture</span>
+            </div>
+            <h3 class="entry-title"><a href="https://www.upbraining.net/blog/comment-les-emotions-aident-a-apprendre-7184/" data-i18n="ped.art3.title">Comment les émotions aident à apprendre</a></h3>
+            </div>
+          <span class="entry-act"><a href="https://www.upbraining.net/blog/comment-les-emotions-aident-a-apprendre-7184/">→ Lire</a></span>
+        </li>
+
+      </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CAT 3 — IA (light) ===== -->
+<section id="cat-3" class="section" data-cat="iii">
+  <div class="section-grid">
+    <aside class="section-label">
+      <span class="num">iii.</span>
+      <span class="lbl" data-i18n="ia.label">Pédagogie augmentée<br/>par l'IA</span>
+      <p class="desc" data-i18n="ia.desc">L'IA comme outil pour améliorer l'apprentissage.</p>
+    </aside>
+    <div class="section-content">
+      <div class="section-h">
+        <h2 data-i18n="ia.h2">Pédagogie <em>augmentée par l'IA</em></h2>
+        <p class="lead" data-i18n="ia.lead">Mes tutoriels et mes vidéos pédagogiques créées avec Heygen, Suno et d'autres outils. Je vois l'IA comme un outil de classe, pas comme gadget.</p>
+      </div>
+
+      <div class="vid-gallery">
+        <span class="vid-gallery-label" data-i18n="ia.gallery.label">★ Galerie · Vidéos pédagogiques IA</span>
+        <h3 class="vid-gallery-title" data-i18n="ia.gallery.title">Capsules pédagogiques</h3>
+        <p class="vid-gallery-desc" data-i18n="ia.gallery.desc">Formats courts générés avec l'IA pour ancrer vocabulaire, grammaire et culture en classe de FLE.</p>
+        <div class="vid-reel-track">
+
+          <div class="vid-reel-card">
+            <div class="vid-thumb" data-vid="VGcZ7xOf_wM">
+              <img src="https://img.youtube.com/vi/VGcZ7xOf_wM/hqdefault.jpg" alt="" loading="lazy" />
+              <div class="vid-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+            </div>
+            <a href="https://atelierdufrancaisparis.com/comment-illustrer-un-dialogue-fle-en-video-grace-a-lia/" class="vid-article-btn" data-i18n="ia.tutorial">Tutoriel →</a>
+          </div>
+
+          <div class="vid-reel-card">
+            <div class="vid-thumb" data-vid="1U1q70rqAhI">
+              <img src="https://img.youtube.com/vi/1U1q70rqAhI/hqdefault.jpg" alt="" loading="lazy" />
+              <div class="vid-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+            </div>
+            <a href="https://atelierdufrancaisparis.com/creer-une-video-parodie-de-celebrite-avec-lia-pour-enseigner-le-fle/" class="vid-article-btn" data-i18n="ia.tutorial">Tutoriel →</a>
+          </div>
+
+          <div class="vid-reel-card">
+            <div class="vid-thumb" data-vid="901f6_Skc0g">
+              <img src="https://img.youtube.com/vi/901f6_Skc0g/hqdefault.jpg" alt="" loading="lazy" />
+              <div class="vid-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+            </div>
+            <a href="https://atelierdufrancaisparis.com/tutoriel-video-illustrer-un-dialogue-de-manuel-fle-a-laide-de-lia/" class="vid-article-btn" data-i18n="ia.tutorial">Tutoriel →</a>
+          </div>
+
+          <div class="vid-reel-card">
+            <div class="vid-thumb" data-vid="bKlvHKeCgCo">
+              <img src="https://img.youtube.com/vi/bKlvHKeCgCo/hqdefault.jpg" alt="" loading="lazy" />
+              <div class="vid-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+            </div>
+            <a href="https://atelierdufrancaisparis.com/creation-dune-video-pedagogique-avec-un-avatar-heygen/" class="vid-article-btn" data-i18n="ia.tutorial">Tutoriel →</a>
+          </div>
+
+        </div>
+      </div>
+      <span class="vid-gallery-label" data-i18n="ia.articles_label">★ Articles</span>
+      <ul class="entries">
+        <li class="entry">
+          <span class="entry-date">Avr. 2026</span>
+          <div class="entry-body">
+            <div class="entry-meta-top">
+              <span data-i18n="label.adf">Article · ADF</span><span>·</span>
+              <span class="lvl lvl-a2"><span class="lvl-dot"></span><span data-i18n="badge.tutoriel">Tutoriel</span></span><span>·</span>
+              <span data-i18n="read.15min">15 min de lecture</span>
+            </div>
+            <h3 class="entry-title"><a href="https://atelierdufrancaisparis.com/creer-une-evaluation-sommative-de-vocabulaire-avec-lia/">Créer une évaluation sommative de vocabulaire avec l’IA</a></h3>
+           </div>
+           <span class="entry-act"><a href="https://atelierdufrancaisparis.com/creer-une-evaluation-sommative-de-vocabulaire-avec-lia/">→ Lire</a></span>
+        </li>
+
+        <li class="entry">
+          <span class="entry-date">Mars. 2026</span>
+          <div class="entry-body">
+            <div class="entry-meta-top">
+              <span data-i18n="label.adf">Article · ADF</span><span>·</span>
+              <span class="lvl lvl-a2"><span class="lvl-dot"></span><span data-i18n="badge.tutoriel">Tutoriel</span></span><span>·</span>
+              <span data-i18n="read.8min">8 min de lecture</span>
+            </div>
+            <h3 class="entry-title"><a href="https://atelierdufrancaisparis.com/comment-generer-une-video-illustrative-de-cours-avec-un-avatar-virtuel-heygen-sur-la-plateforme-edtake/" data-i18n="ia.art2.title">Comment générer une vidéo illustrative de cours avec un avatar virtuel Heygen sur la plateforme Edtake</a></h3>
+            </div>
+           <span class="entry-act"><a href="https://atelierdufrancaisparis.com/comment-generer-une-video-illustrative-de-cours-avec-un-avatar-virtuel-heygen-sur-la-plateforme-edtake/">→ Lire</a></span>
+        </li>
+
+           <li class="entry">
+          <span class="entry-date">Mars. 2026</span>
+          <div class="entry-body">
+            <div class="entry-meta-top">
+              <span data-i18n="label.adf">Article · ADF</span><span>·</span>
+              <span class="lvl lvl-a2"><span class="lvl-dot"></span><span data-i18n="badge.tutoriel">Tutoriel</span></span><span>·</span>
+              <span data-i18n="read.8min">8 min de lecture</span>
+            </div>
+            <h3 class="entry-title"><a href="https://atelierdufrancaisparis.com/creer-une-chanson-en-fle-avec-lia/" data-i18n="ia.art3.title">Créer une chanson sur le subjonctif avec l'IA</a></h3>
+            </div>
+           <div class="entry-acts">
+             <span class="entry-act"><a href="https://atelierdufrancaisparis.com/creer-une-chanson-en-fle-avec-lia/">→ Lire</a></span>
+             <span class="entry-act"><a href="https://suno.com/s/UMDHmCoHn7wrCdju" data-i18n="ia.art3.act1">→ Écouter (version Aznavour)</a></span>
+             <span class="entry-act"><a href="https://suno.com/s/Xk8Mr5n3XW7TEObx" data-i18n="ia.art3.act2">→ Écouter (version moderne)</a></span>
+           </div>
+          </li>
+
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FORMATIONS (DARK) ===== -->
+<section id="formations" class="section dark" data-cat="iv">
+  <div class="section-grid">
+    <aside class="section-label">
+      <span class="num">iv.</span>
+      <span class="lbl" data-i18n="form.label">Formations</span>
+      <p class="desc" data-i18n="form.desc">Sur-mesure, en synchrone, devis personnalisé.</p>
+    </aside>
+    <div class="section-content">
+      <div class="section-h">
+        <h2 data-i18n="form.h2">Formations <em>synchrones</em></h2>
+        <p class="lead" data-i18n="form.lead">Trois domaines de formation pour enseignants, écoles et institutions. Sur-mesure, en ligne ou en présentiel.</p>
+      </div>
+
+      <ul class="formations-list">
+
+        <li class="formation">
+          <div class="anim-border-wrap"><span></span><span></span><span></span><span></span><div class="formation-illus if-mixed-1"><img src="../images/logo-flashcards.png" alt="Les flashcards en langues"></div></div>
+          <div class="formation-body">
+            <div class="formation-head">
+              <h3 class="formation-title" data-i18n="form.f1.title">Les flashcards pour le vocabulaire et la grammaire</h3>
+              <span class="formation-format" data-i18n="form.f1.format">2h + Accompagnement</span>
+            </div>
+            <p class="formation-desc" data-i18n="form.f1.desc">Utiliser pleinement le potentiel des flashcards pour la mémorisation durable du vocabulaire et des points difficiles de grammaire. Résultat : autonomisation de l'apprenant dans son apprentissage.</p>
+            <div class="formation-tags">
+              <span class="formation-tag" data-i18n="form.tag.autonomie">Autonomie</span>
+              <span class="formation-tag" data-i18n="form.tag.vocabulaire">Vocabulaire</span>
+              <span class="formation-tag" data-i18n="form.tag.grammaire">Grammaire</span>
+              <span class="formation-tag">Anki</span>
+              <span class="formation-tag">DELF</span>
+            </div>
+             <p class="formation-proof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg> <span data-i18n="form.f1.proof.text">8000+ flashcards déjà créées ; méthode basée sur la recherche et l'expérience</span></p>
+          </div>
+        </li>
+
+        <li class="formation">
+          <div class="anim-border-wrap"><span></span><span></span><span></span><span></span><div class="formation-illus if-mixed-3"><img src="../images/logo-robot.png" alt="L'IA appliquée aux langues"></div></div>
+          <div class="formation-body">
+            <div class="formation-head">
+              <h3 class="formation-title" data-i18n="form.f2.title">L'IA appliquée aux langues</h3>
+              <span class="formation-format" data-i18n="form.f2.format">Durée variable</span>
+            </div>
+            <p class="formation-desc" data-i18n="form.f2.desc">Concevoir des cours plus mémorables à l'aide d'outils IA comme <a href="https://atelierdufrancaisparis.com/author/cynthia/">ceux décrits sur ADF</a>. ChatGPT, Suno, Heygen, Claude Code ; montage vidéo, vibe coding, création de chanson... Tutoriels selon vos besoins.</p>
+            <div class="formation-tags">
+              <span class="formation-tag" data-i18n="form.tag.ia">IA</span>
+              <span class="formation-tag" data-i18n="form.tag.videos">Vidéos</span>
+              <span class="formation-tag" data-i18n="form.tag.projets">Projets de classe</span>
+            </div>
+            <p class="formation-proof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg> <span data-i18n="form.f2.proof.text">Exemples de tutoriels déjà présents sur AFP — </span><a href="https://atelierdufrancaisparis.com/author/cynthia/" target="_blank" rel="noopener" data-i18n="form.f2.proof.link">voir les articles</a></p>
+          </div>
+        </li>
+
+        <li class="formation">
+          <div class="anim-border-wrap"><span></span><span></span><span></span><span></span><div class="formation-illus if-mixed-2"><img src="../images/logo-rocket.png" alt="La métapédagogie en classe de langues"></div></div>
+          <div class="formation-body">
+            <div class="formation-head">
+              <h3 class="formation-title" data-i18n="form.f3.title">La métapédagogie en classe de langues</h3>
+              <span class="formation-format" data-i18n="form.f3.format">Min. 2h</span>
+            </div>
+            <p class="formation-desc" data-i18n="form.f3.desc">En collaboration avec <a href="https://upbraining.net/">l'institut Upbraining</a>, les bases de la pédagogie pour rendre vos apprenants plus autonomes et motivés, et créer des cours plus efficaces en général.</p>
+            <div class="formation-tags">
+              <span class="formation-tag" data-i18n="form.tag.pedagogie">Pédagogie</span>
+              <span class="formation-tag">Motivation</span>
+              <span class="formation-tag" data-i18n="form.tag.autonomie">Autonomie</span>
+            </div>
+            <p class="formation-proof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg> <span data-i18n="form.f3.proof.text">Déjà présentée à l'Alliance Française — </span><a href="https://www.facebook.com/upbraining/posts/pfbid02nDganivBpvucCvefKzHxDNNhkMRHoFdxbLGFx4wDj2xMKPPrJnmh5UMaso7vkqB5l" target="_blank" rel="noopener" data-i18n="form.f3.proof.link">voir le post</a></p>
+          </div>
+        </li>
+
+      </ul>
+
+      <div class="formations-cta">
+        <h3 data-i18n="form.cta.title">Devis sur-mesure</h3>
+        <p data-i18n="form.cta.text">Chaque formation peut être adaptée à votre équipe et votre contexte. Écrivez-moi pour un devis personnalisé.</p>
+        <a href="#contact" class="btn primary" data-i18n="form.cta.btn">Demander un devis</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TÉMOIGNAGES (light-warm) ===== -->
+<section id="temoignages" class="section light-warm" data-cat="v">
+  <div class="section-grid">
+    <aside class="section-label">
+      <span class="num">v.</span>
+      <span class="lbl" data-i18n="test.label">Wall of Love</span>
+      <p class="desc" data-i18n="test.desc">Ce que disent élèves et collègues</p>
+    </aside>
+    <div class="section-content">
+      <div class="section-h">
+        <h2 data-i18n="test.h2">Ce qu'ils <em>disent de moi</em></h2>
+        <p class="lead" data-i18n="test.lead">J'aime contribuer à des projets qui ont du sens pour moi. Mon éthique professionnelle repose sur la proactivité, la passion, la créativité et l'adaptation.</p>
+      </div>
+
+      <div class="t-tabs" role="tablist">
+        <button class="t-tab active" data-filter="all" data-i18n="test.filter.all">Tous</button>
+        <button class="t-tab" data-filter="e" data-i18n="test.filter.students">Élèves</button>
+        <button class="t-tab" data-filter="c" data-i18n="test.filter.colleagues">Collègues</button>
+      </div>
+
+      <ul class="t-list">
+
+        <li class="t-card" data-tcat="e">
+          <div class="t-meta-row">
+            <span class="t-badge t-b-eleve" data-i18n="test.badge.student">Élève</span>
+          </div>
+          <p class="t-text" data-i18n="test.t1.text">Cynthia est une prof géniale ! Elle s’adapte à votre niveau et vous aide à progresser à partir de ce que vous connaissez déjà. Ses explications sont claires et efficaces. Je la recommande vivement !! </p>
+          <div class="t-author">
+            <span class="t-name">Allison Lawrence</span>
+            <span class="t-role" data-i18n="test.t1.role">A1 - Américaine</span>
+          </div>
+        </li>
+
+        <li class="t-card" data-tcat="c">
+          <div class="t-meta-row">
+            <span class="t-badge t-b-manager" data-i18n="test.badge.teacher">Enseignante de FLE</span>
+          </div>
+          <p class="t-text">Je te suis très reconnaissante d'être venue visiter notre classe. Ta visite m'a beaucoup encouragée et motivée, et les élèves ont aussi réagi très positivement. Tu as suscité un vrai intérêt à l'école ! Depuis que tu es venue, presque tous les élèves me saluent en français, alors qu'avant, il n'y en avait que 3 ou 4...</p>
+          <div class="t-author">
+            <span class="t-name">Alena M.</span>
+            <span class="t-role" data-i18n="test.t2.role">Lycée Michalovce (Slovaquie)</span>
+          </div>
+        </li>
+
+         <li class="t-card" data-tcat="e">
+          <div class="t-meta-row">
+            <span class="t-badge t-b-eleve" data-i18n="test.badge.student">Élève</span>
+          </div>
+          <p class="t-text" data-i18n="test.t1.text">Les cours avec Cynthia sont très bénéfiques. Il est évident qu’elle apprend elle-même des langues étrangères, connaît exactement les méthodes d’enseignement et les utilise dans l’enseignement. Grâce à cela, mon français s’améliore à chaque leçon. En même temps, Cyntia est une personne très créative et sait comment rendre chaque leçon intéressante.</p>
+          <div class="t-author">
+            <span class="t-name">Robert K.</span>
+            <span class="t-role" data-i18n="test.t1.role">B2 - Slovaque</span>
+          </div>
+        </li>
+
+        <li class="t-card t-hidden" data-tcat="e">
+          <div class="t-meta-row">
+            <span class="t-badge t-b-eleve" data-i18n="test.badge.student">Élève</span>
+          </div>
+          <p class="t-text" data-i18n="test.t3.text">J’ai eu le plaisir d’apprendre le français débutant avec Cynthia Mayer pendant quelques mois, et mon expérience a été très positive. Elle était toujours très bien préparée, très compétente et expliquait les notions d’une façon claire et ludique. La patience et l’attention qu’elle porte aux besoins de chaque étudiant ont créé un environnement bienveillant dans lequel je me sentais à l’aise pour pratiquer et poser toutes mes questions en toute confiance. Sa passion pour l’enseignement du français transparaissait dans chacun des cours auxquels j’ai assisté ; je suis donc convaincu qu’elle continuera d’être une excellente enseignante dans la suite de sa carrière</p>
+          <div class="t-author">
+            <span class="t-name">Minho Kim</span>
+            <span class="t-role" data-i18n="test.t3.role">A1 - Coréen</span>
+          </div>
+        </li>
+
+         <li class="t-card t-hidden" data-tcat="e">
+          <div class="t-meta-row">
+            <span class="t-badge t-b-eleve" data-i18n="test.badge.student">Élève</span>
+          </div>
+          <p class="t-text">Je me souviens de nos cours, et surtout de nos moments de discussion,  de nos fous rires quand notre professeur  Cynthia lançait des débats sur la vie. On ressent en elle un grand potentiel et un amour sincère pour les gens. Je lui suis très  reconnaissante.</p>
+          <div class="t-author">
+            <span class="t-name">Svitlana</span>
+            <span class="t-role" data-i18n="test.t4.role">B1 - Ukrainienne</span>
+          </div>
+        </li>
+
+        <li class="t-card" data-tcat="c">
+          <div class="t-meta-row">
+            <span class="t-badge t-b-tutrice" data-i18n="test.badge.supervisor">Tutrice de stage</span>
+          </div>
+          <p class="t-text" data-i18n="test.t5.text">Je n'ai rien à redire, je pense que c'est excellent, les élèves ont pu pratiquer les connaissances acquises avec leur prof dans un cadre amusant. Les activités étaient adaptées au différents niveaux, c'est très créatif, je pense que c'est super pour un public enfant, vraiment. Merci pour ce beau travail.</p>
+          <div class="t-author">
+            <span class="t-name">Estelle Kosnansky</span>
+            <span class="t-role">Alliance Française de Košice</span>
+          </div>
+        </li>
+
+        <li class="t-card" data-tcat="c">
+          <div class="t-meta-row">
+            <span class="t-badge t-b-tutrice" data-i18n="test.badge.supervisor">Tutrice de stage</span>
+          </div>
+          <p class="t-text" data-i18n="test.t5.text">J’ai travaillé avec Mlle Mayer sur un groupe d’élèves marocaines désireuses d’apprendre à lire et à écrire. Certaines ne parlant pas le français, nous avons demandé à d’autres de traduire. Ces dames n’avaient pas été scolarisées chez elles. Tenant compte de cette tâche difficile, ma stagiaire a été conviviale, elle encourageait chaque élève et a pris le temps nécessaire pour leur donner des explications. Cynthia prenait le temps de se lever pour aller voir des élèves en particulier. Elle les regardait en parlant et s’adressait à elles par leur prénom. Elle a rattaché leur quotidien à ses enseignements. Les objectifs étaient présentés clairement. Cynthia a organisé des exercices progressifs, et vérifiait toujours la compréhension des consignes, de ses corrections et de ses explications. C’était un plaisir de travailler avec elle et d’améliorer mes méthodes d’enseignement. </p>
+          <div class="t-author">
+            <span class="t-name">Colette Dupré</span>
+            <span class="t-role">Centre Culturel de Belfort</span>
+          </div>
+        </li>
+
+        <li class="t-card t-hidden" data-tcat="c">
+          <div class="t-meta-row">
+            <span class="t-badge t-b-manager" data-i18n="test.badge.manager">Manager</span>
+          </div>
+          <p class="t-text" data-i18n="test.t7.text">Au sein de notre groupe, Cynthia a animé de manière efficace et en totale autonomie un groupe de travail pluridisciplinaire composé d'une quinzaine de professionnels. Elle a fait preuve d'une grande patience et d'une grande qualité d'écoute, sachant rassurer avec beaucoup de bienveillance les professionnels face à leurs appréhensions vis-à-vis de la technologie.</p>
+          <div class="t-author">
+            <span class="t-name">Isabelle Cornu</span>
+            <span class="t-role">CHU de Nantes</span>
+          </div>
+        </li>
+
+        <li class="t-card t-hidden" data-tcat="c">
+          <div class="t-meta-row">
+            <span class="t-badge t-b-manager" data-i18n="test.badge.manager">Manager</span>
+          </div>
+          <p class="t-text" data-i18n="test.t6.text">J’ai eu le plaisir de travailler avec Cynthia. […] Elle va toujours de l’avant pour aider les autres. Quand les choses se compliquent, elle sait endosser plusieurs rôles pour faire avancer les choses. […] C’est une excellente coéquipière, quelqu’un qui aime penser hors des sentiers battus et qui aime résoudre des problèmes de façon créative. Elle possède aussi cette rare capacité à décomposer des concepts complexes en exemples simples. Elle serait un atout pour n’importe quelle équipe !</p>
+          <div class="t-author">
+            <span class="t-name">Kumar Gunasekaran</span>
+            <span class="t-role">Visa</span>
+          </div>
+        </li>
+
+        <li class="t-card t-hidden" data-tcat="c">
+          <div class="t-meta-row">
+            <span class="t-badge t-b-manager" data-i18n="test.badge.manager">Manager</span>
+          </div>
+          <p class="t-text" data-i18n="test.t7.text">Être curieuse et donner le meilleur d'elle-même fait partie intégrante de la personnalité de Cynthia. Ses compétences de communication et d'analyse sont excellentes. De plus, Cynthia a travaillé avec nous dans un environnement biculturel franco-chinois, utilisant trois langues différentes au quotidien sans la moindre difficulté. Sur le plan personnel, ce fut un réel plaisir de collaborer avec elle : elle a une attitude enjouée, positive, avec un sourire dès le matin.</p>
+          <div class="t-author">
+            <span class="t-name">Stéphane Mallet</span>
+            <span class="t-role">Defontaine Qingdao</span>
+          </div>
+        </li>
+
+        <li class="t-card t-hidden" data-tcat="c">
+          <div class="t-meta-row">
+            <span class="t-badge t-b-manager" data-i18n="test.badge.manager">Manager</span>
+          </div>
+          <p class="t-text" data-i18n="test.t7.text">Je ne peux que recommander Cynthia : c’est une coéquipière remarquable, quelqu’un qui aime innover et résoudre les problèmes avec créativité. </p>
+          <div class="t-author">
+            <span class="t-name">Spencer Goold</span>
+            <span class="t-role">AGIF</span>
+          </div>
+        </li>
+  
+        <li class="t-card t-hidden" data-tcat="c">
+          <div class="t-meta-row">
+            <span class="t-badge t-b-collegue" data-i18n="test.badge.colleague">Collègue</span>
+          </div>
+          <p class="t-text" data-i18n="test.t8.text">Une chose que j’admire chez Cynthia, c’est sa nature proactive, orientée vers les résultats. J’ai eu le privilège de travailler avec elle comme co-assistante de professeur (Teaching Assistant) pour un cours de Master. Chaque fois qu’une tâche nous était confiée, Cynthia s’y attaquait tout de suite. Elle semblait vraiment aimer son travail, et cette passion était très inspirante. Elle était aussi très innovante et cherchait toujours un moyen de rendre le cours plus intéressant. Cynthia est très investie dans son travail. </p>
+          <div class="t-author">
+            <span class="t-name">Tanaya Amar</span>
+            <span class="t-role">Duke University</span>
+          </div>
+        </li>
+
+      </ul>
+
+      <div class="t-more-row">
+        <button class="t-more-btn" id="t-more">
+          <span class="lbl" data-i18n="test.more">Voir d'autres témoignages</span>
+          <span class="arr">↓</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER (DARK) ===== -->
+<footer id="contact">
+  <div class="footer-grid">
+    <aside class="section-label">
+      <span class="num" style="color: var(--corail);">·</span>
+      <span class="lbl" data-i18n="footer.label">Contact</span>
+      <p class="desc" data-i18n="footer.desc">J'espère collaborer avec vous.</p>
+    </aside>
+    <div class="footer-content">
+      <div class="footer-inner">
+        <div class="footer-text">
+          <h3 data-i18n="footer.title">Travaillons <em>ensemble</em></h3>
+          <p class="footer-pitch" data-i18n="footer.pitch">Cours particuliers, ateliers en entreprise, projets pédagogiques, formations sur-mesure, collaborations EdTech. Je suis à votre écoute.</p>
+          <div class="footer-cta" style="margin-top: 40px !important;">
+            <a href="mailto:sylingual@gmail.com" aria-label="Envoyer un email à Cynthia" style="text-decoration:none;">
+              <div class="letter-image">
+                <div class="animated-mail">
+                  <div class="back-fold"></div>
+                  <div class="letter">
+                    <div class="letter-border"></div>
+                    <span class="letter-heading" data-i18n="footer.letter.heading">Contactez-moi</span>
+                    <span class="letter-email">sylingual@gmail.com</span>
+                    <div class="letter-stamp"></div>
+                  </div>
+                  <div class="top-fold"></div>
+                  <div class="body"></div>
+                  <div class="left-fold"></div>
+                </div>
+                <div class="env-shadow"></div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="footer-photo">
+            <img src="../images/hero-end-contact.png" alt="Contactez-moi" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span data-i18n="footer.copyright">© 2026 Sylingual · par Cynthia Mayer</span>
+    <span class="footer-tagline">Designing engaging language learning experiences</span>
+    <span><a href="https://www.linkedin.com/in/mayercynthia/">LinkedIn</a> · <a href="https://atelierdufrancaisparis.com/author/cynthia/">ADF</a> · <a href="https://plumedesy.com/" data-i18n="footer.link.personal">Site personnel</a></span>
+  </div>
+</footer>
+<script src="../scripts.js"></script>
+<script>
+(function(){
+  document.body.style.opacity='0';
+  requestAnimationFrame(function(){requestAnimationFrame(function(){document.body.style.opacity='1';});});
+  var sw=document.getElementById('langSwitch');
+  if(sw){sw.addEventListener('click',function(e){e.preventDefault();var d=sw.href;document.body.style.opacity='0';setTimeout(function(){location.href=d;},380);});}
+})();
+</script>
+</body>
+</html>
