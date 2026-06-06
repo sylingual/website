@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Questionnaire</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=Spectral:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#ffffff;
+    --paper-2:#f4f4f4;
+    --ink:#111111;
+    --ink-soft:#666666;
+    --line:#d6d6d6;
+    --shadow:0 1px 0 rgba(0,0,0,.04), 0 12px 40px -20px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Spectral',Georgia,serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.55;
+    min-height:100vh;
+    padding:clamp(1rem,4vw,3.5rem);
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:920px;margin:0 auto}
+
+  /* ---------- En-tête ---------- */
+  header.masthead{
+    border-bottom:2px solid var(--ink);
+    padding-bottom:1.3rem;margin-bottom:2rem;
+  }
+  h1{
+    font-family:'Fraunces';font-weight:800;font-optical-sizing:144;
+    font-size:clamp(1.8rem,5vw,2.8rem);line-height:1.05;
+    letter-spacing:-.01em;margin-bottom:.9rem;
+  }
+  .greeting{font-size:1.05rem;color:var(--ink);max-width:64ch}
+  .greeting b{font-weight:600}
+  .instructions{
+    margin-top:1.1rem;font-size:.95rem;color:var(--ink-soft);font-style:italic;
+    max-width:64ch;line-height:1.6;
+  }
+  /* ---------- Example ---------- */
+  .example{
+    border:1px solid var(--line);border-radius:12px;
+    padding:clamp(1.1rem,4vw,1.8rem);margin-top:1.6rem;background:var(--paper-2);
+  }
+  .ex-text{font-size:.92rem;color:var(--ink);font-style:italic;margin:0 0 1.1rem;line-height:1.55}
+  .ex-note{margin:0}
+  .ex-sd{
+    display:grid;grid-template-columns:1fr 1fr;
+    grid-template-areas:"a b" "scale scale";
+    column-gap:1.6rem;row-gap:.8rem;align-items:start;
+  }
+  .ex-pole-a{grid-area:a;font-size:.92rem;font-weight:500}
+  .ex-pole-b{grid-area:b;text-align:right;font-size:.92rem;font-weight:500}
+  .ex-sd > .ex-scale{grid-area:scale}
+  .ex-scale{display:flex;gap:clamp(.15rem,1.2vw,.6rem);justify-content:center}
+  .ex-div{border:none;border-top:1px solid var(--line);margin:1.9rem 0}
+  .ex-dot{
+    width:clamp(1.3rem,6vw,1.7rem);height:clamp(1.3rem,6vw,1.7rem);border-radius:50%;
+    border:1.5px solid var(--line);background:var(--paper);flex:none;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces';font-weight:600;font-size:clamp(.68rem,2.2vw,.72rem);color:var(--ink-soft);
+  }
+  .ex-dot.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+  /* ---------- Item ---------- */
+  .item{
+    background:var(--paper);
+    border:1px solid var(--line);border-radius:14px;
+    padding:clamp(1.1rem,3vw,1.8rem);margin-bottom:1.5rem;
+    box-shadow:var(--shadow);
+    opacity:0;transform:translateY(14px);
+    animation:rise .6s cubic-bezier(.2,.7,.2,1) forwards;
+  }
+  .item:nth-child(1){animation-delay:.05s}
+  .item:nth-child(2){animation-delay:.13s}
+  .item:nth-child(3){animation-delay:.21s}
+  @keyframes rise{to{opacity:1;transform:none}}
+
+  .item-num{
+    font-family:'Fraunces';font-weight:800;font-size:1.05rem;
+    color:#fff;background:var(--ink);width:2rem;height:2rem;
+    display:inline-flex;align-items:center;justify-content:center;
+    border-radius:50%;margin-bottom:.9rem;
+  }
+  /* semantic-differential grid: horizontal on desktop, vertical on mobile */
+  .sd{
+    display:grid;grid-template-columns:1fr 1fr;
+    grid-template-areas:"a b" "scale scale";
+    column-gap:1.5rem;row-gap:1.2rem;align-items:start;
+  }
+  .pole-a{grid-area:a}
+  .pole-b{grid-area:b;text-align:right}
+  .sd > .scale{grid-area:scale}
+  .pole p{font-size:.98rem}
+  .pole .tag{
+    display:block;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;
+    margin-bottom:.3rem;font-weight:600;color:var(--ink-soft);
+  }
+
+  /* ---------- Scale 1-9 ---------- */
+  .scale{display:flex;align-items:center;justify-content:center}
+  .points{display:flex;gap:clamp(.15rem,1.2vw,.6rem);justify-content:center}
+  .pt{display:flex;flex-direction:column;align-items:center;cursor:pointer}
+  .pt input{position:absolute;opacity:0;pointer-events:none}
+  .dot{
+    width:clamp(1.45rem,7vw,2.2rem);height:clamp(1.45rem,7vw,2.2rem);border-radius:50%;
+    border:1.5px solid var(--line);background:var(--paper);
+    display:flex;align-items:center;justify-content:center;flex:none;
+    font-family:'Fraunces';font-weight:600;font-size:clamp(.72rem,2.4vw,.85rem);color:var(--ink-soft);
+    transition:all .18s ease;
+  }
+  .pt:hover .dot{border-color:var(--ink);transform:translateY(-2px)}
+  .pt input:checked + .dot{
+    background:var(--ink);color:#fff;border-color:var(--ink);
+    transform:scale(1.12);box-shadow:0 6px 16px -6px rgba(0,0,0,.5);
+  }
+
+  /* ---------- Bouton ---------- */
+  .actions{margin:2.4rem 0 1rem;display:flex;flex-wrap:wrap;gap:.8rem;align-items:center}
+  button{
+    font-family:'Fraunces';font-weight:600;font-size:1rem;cursor:pointer;
+    border:none;border-radius:9px;padding:.8rem 1.6rem;transition:transform .15s,filter .2s;
+  }
+  .btn-main{background:var(--ink);color:#fff}
+  .btn-main:hover{transform:translateY(-2px);filter:brightness(1.6)}
+  .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:#fff}
+  .warn{color:var(--ink);font-size:.9rem;font-style:italic;font-weight:600}
+
+  /* ---------- Result ---------- */
+  .result{
+    margin-top:2rem;border:2px solid var(--ink);border-radius:14px;
+    background:var(--paper-2);padding:clamp(1.2rem,3vw,2rem);
+    box-shadow:var(--shadow);display:none;
+  }
+  .result.show{display:block;animation:rise .5s ease forwards}
+  .result h2{font-family:'Fraunces';font-weight:800;font-size:1.4rem;margin-bottom:.6rem}
+  .detail{font-size:1.05rem;margin:.6rem 0 1.2rem;font-family:'Fraunces';font-weight:600}
+  .detail span{display:inline-block;margin-right:.4rem}
+  .sendback{font-size:.98rem;color:var(--ink);line-height:1.6;border-top:1px solid var(--line);padding-top:1rem}
+  .sendback b{font-weight:600}
+
+  footer{margin-top:3rem;font-size:.76rem;color:var(--ink-soft);
+    border-top:1px solid var(--line);padding-top:1rem;line-height:1.7}
+
+  @media(max-width:560px){
+    /* statement (top) -> scale running top-to-bottom -> statement (bottom) */
+    .sd{grid-template-columns:1fr;grid-template-areas:"a" "scale" "b";row-gap:.65rem}
+    .pole-b{text-align:left}
+    .points{flex-direction:column;gap:.3rem;align-items:center;position:relative}
+    .points::before{content:"";position:absolute;top:1.15rem;bottom:1.15rem;left:50%;
+      width:2px;background:var(--line);transform:translateX(-50%);z-index:0}
+    .pt{flex-direction:row;padding:.28rem;position:relative;z-index:1}
+    .dot{width:2.3rem;height:2.3rem;font-size:1rem;background:var(--paper)}
+
+    .ex-sd{grid-template-columns:1fr;grid-template-areas:"a" "scale" "b";row-gap:.5rem}
+    .ex-pole-b{text-align:left}
+    .ex-scale{flex-direction:column;gap:.3rem;align-items:center;position:relative}
+    .ex-scale::before{content:"";position:absolute;top:1rem;bottom:1rem;left:50%;
+      width:2px;background:var(--line);transform:translateX(-50%);z-index:0}
+    .ex-dot{width:2rem;height:2rem;font-size:.85rem;position:relative;z-index:1;background:var(--paper)}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <h1>Questionnaire</h1>
+    <p class="greeting">Hello! To check whether you are eligible for our study, please fill in the 3&nbsp;questions below (it's quick), then click &ldquo;Submit&rdquo; and send a screenshot to <b>sylingual@gmail.com</b> or to <b>+33&nbsp;6&nbsp;52&nbsp;07&nbsp;47&nbsp;98</b> on WhatsApp.</p>
+    <p class="instructions">There are no right or wrong answers on this questionnaire. Mark in the space for each pair of items what you think you are like.</p>
+
+    <div class="example">
+      <div class="ex-block">
+        <p class="ex-text">For example, if you like bicycling much more than swimming, you might mark in space 2 (or even 1), like this:</p>
+        <div class="ex-sd">
+          <div class="ex-pole-a">I like riding a bicycle.</div>
+          <div class="ex-scale">
+            <span class="ex-dot">1</span><span class="ex-dot on">2</span><span class="ex-dot">3</span>
+            <span class="ex-dot">4</span><span class="ex-dot">5</span><span class="ex-dot">6</span>
+            <span class="ex-dot">7</span><span class="ex-dot">8</span><span class="ex-dot">9</span>
+          </div>
+          <div class="ex-pole-b">I like swimming.</div>
+        </div>
+      </div>
+
+      <hr class="ex-div">
+
+      <div class="ex-block">
+        <p class="ex-text">If you sort of like swimming better, you might mark in space 6.</p>
+        <div class="ex-sd">
+          <div class="ex-pole-a">I like riding a bicycle.</div>
+          <div class="ex-scale">
+            <span class="ex-dot">1</span><span class="ex-dot">2</span><span class="ex-dot">3</span>
+            <span class="ex-dot">4</span><span class="ex-dot">5</span><span class="ex-dot on">6</span>
+            <span class="ex-dot">7</span><span class="ex-dot">8</span><span class="ex-dot">9</span>
+          </div>
+          <div class="ex-pole-b">I like swimming.</div>
+        </div>
+      </div>
+
+      <hr class="ex-div">
+
+      <p class="ex-text ex-note">If you think you are in the middle or really do both equally, use space 5. Try to avoid using space 5 if you can.</p>
+    </div>
+  </header>
+
+  <form id="q"></form>
+
+  <div class="actions">
+    <button type="button" class="btn-main" id="submit">Submit</button>
+    <button type="button" class="btn-ghost" id="reset">Reset</button>
+    <span class="warn" id="warn" style="display:none">Please answer all three questions.</span>
+  </div>
+
+  <section class="result" id="result">
+    <h2>Your answers</h2>
+    <p class="detail" id="detail"></p>
+    <p class="sendback">Thank you! Please take a <b>screenshot</b> of this and send it to <b>sylingual@gmail.com</b> or to <b>+33&nbsp;6&nbsp;52&nbsp;07&nbsp;47&nbsp;98</b> on WhatsApp.</p>
+  </section>
+
+</div>
+
+<script>
+  const ITEMS = [
+    { id:1,  left:"When I work with new language in context, in stories or articles or at sentences, I often pick up new words, ideas, etc., that way, without planning in advance.",
+             right:"I don't usually get much from the context unless I pay close attention to what I'm doing." },
+    { id:11, left:"I often find that I have picked up new words, phrases, and so on without realizing it.",
+             right:"I usually have to undertake focused study before I learn new words or phrases. I wouldn't describe myself as someone who learns by 'osmosis.'" },
+    { id:21, left:"I learn best from language that is in meaningful context like stories and conversations.",
+             right:"I don't like to have to learn from just conversations, informal language use, or readings for native speakers that I haven't been prepared for." }
+  ];
+
+  const form = document.getElementById('q');
+  ITEMS.forEach(it=>{
+    const card = document.createElement('div');
+    card.className='item';
+    let pts='';
+    for(let n=1;n<=9;n++){
+      pts += `<label class="pt">
+                <input type="radio" name="i${it.id}" value="${n}">
+                <span class="dot">${n}</span>
+              </label>`;
+    }
+    card.innerHTML = `
+      <div class="item-num">${it.id}</div>
+      <div class="sd">
+        <div class="pole pole-a"><span class="tag">Most like this</span><p>${it.left}</p></div>
+        <div class="scale"><div class="points">${pts}</div></div>
+        <div class="pole pole-b"><span class="tag">Most like this</span><p>${it.right}</p></div>
+      </div>`;
+    form.appendChild(card);
+  });
+
+  function getVal(id){
+    const el = form.querySelector(`input[name="i${id}"]:checked`);
+    return el ? parseInt(el.value,10) : null;
+  }
+
+  document.getElementById('submit').addEventListener('click', ()=>{
+    const v1=getVal(1), v11=getVal(11), v21=getVal(21);
+    const warn=document.getElementById('warn');
+    if(v1===null||v11===null||v21===null){ warn.style.display='inline'; return; }
+    warn.style.display='none';
+    document.getElementById('detail').innerHTML =
+      `<span>Question&nbsp;1: ${v1}</span><span>·</span>`+
+      `<span>Question&nbsp;11: ${v11}</span><span>·</span>`+
+      `<span>Question&nbsp;21: ${v21}</span>`;
+    document.getElementById('result').classList.add('show');
+    document.getElementById('result').scrollIntoView({behavior:'smooth',block:'center'});
+  });
+
+  document.getElementById('reset').addEventListener('click', ()=>{
+    form.querySelectorAll('input[type=radio]').forEach(r=>r.checked=false);
+    document.getElementById('result').classList.remove('show');
+    document.getElementById('warn').style.display='none';
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+</script>
+</body>
+</html>
