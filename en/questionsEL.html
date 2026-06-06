@@ -231,11 +231,11 @@
 
 <script>
   const ITEMS = [
-    { id:1,  left:"When I work with new language in context, in stories or articles or at sentences, I often pick up new words, ideas, etc., that way, without planning in advance.",
+    { id:1,  label:"A", left:"When I work with new language in context, in stories or articles or at sentences, I often pick up new words, ideas, etc., that way, without planning in advance.",
              right:"I don't usually get much from the context unless I pay close attention to what I'm doing." },
-    { id:11, left:"I often find that I have picked up new words, phrases, and so on without realizing it.",
+    { id:11, label:"B", left:"I often find that I have picked up new words, phrases, and so on without realizing it.",
              right:"I usually have to undertake focused study before I learn new words or phrases. I wouldn't describe myself as someone who learns by 'osmosis.'" },
-    { id:21, left:"I learn best from language that is in meaningful context like stories and conversations.",
+    { id:21, label:"C", left:"I learn best from language that is in meaningful context like stories and conversations.",
              right:"I don't like to have to learn from just conversations, informal language use, or readings for native speakers that I haven't been prepared for." }
   ];
 
@@ -251,7 +251,7 @@
               </label>`;
     }
     card.innerHTML = `
-      <div class="item-num">${it.id}</div>
+      <div class="item-num">${it.label}</div>
       <div class="sd">
         <div class="pole pole-a"><span class="tag">Most like this</span><p>${it.left}</p></div>
         <div class="scale"><div class="points">${pts}</div></div>
@@ -271,9 +271,9 @@
     if(v1===null||v11===null||v21===null){ warn.style.display='inline'; return; }
     warn.style.display='none';
     document.getElementById('detail').innerHTML =
-      `<span>Question&nbsp;1: ${v1}</span><span>·</span>`+
-      `<span>Question&nbsp;11: ${v11}</span><span>·</span>`+
-      `<span>Question&nbsp;21: ${v21}</span>`;
+      `<span>Question&nbsp;A: ${v1}</span><span>·</span>`+
+      `<span>Question&nbsp;B: ${v11}</span><span>·</span>`+
+      `<span>Question&nbsp;C: ${v21}</span>`;
     document.getElementById('result').classList.add('show');
     document.getElementById('result').scrollIntoView({behavior:'smooth',block:'center'});
   });
